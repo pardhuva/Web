@@ -1,0 +1,13 @@
+//tailwind css 
+   it is utilityfirst css library (latest library)
+   
+   to install tailwind css 
+   npm install tailwindcss @tailwindcss/vite
+
+   import tailwindcss from '@tailwindcss/vite' to vite.config.js 
+   and add tailwindcss in plugins 
+
+   <div className= 'h-full bg-red'> Hello </div> so here you can directly give all the styles simply using tailwind css 
+
+//small ui project project1
+  

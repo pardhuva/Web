@@ -1,0 +1,11 @@
+*{
+    background-color:black;
+}
+.wall{
+    padding:500px 500px;
+    flex:center;
+    color:white;
+}
+.wall.hi{
+    margin-top:50px;
+}

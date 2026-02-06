@@ -1,0 +1,39 @@
+//we got the data from the api call before now how to manipulate or deal with that data 
+
+ //useEffect
+
+  so actually react used for ui 
+  parallelly with ui there are other tasks will go parallel like api calling,dom manipulations ,timeout,interval 
+  inaccording to main react process there are some other side tasks 
+
+  so there should be side by should not be inside the main that is when useEffect used 
+   
+   so normally if we have some function inside the app then if we call that function it will be invoked multiple times whenever we do some change in the app body its useless 
+   so if you use useState and useEffect which contains that function even then when we chaneg the state it invole the function 
+
+ //what is the use first what is the reason it is invited
+  Reason.jsx 
+  so if you check there you can se ethat in any change change in the ui it gets re-rendered every time but actually it shoudl be like side differently only once 
+  that is when we use useEffect  
+  so actually the main react will be run and then side by some other tasks to be managed parallely 
+  but actually they will not run in parallel so all those are stored in side stack we call it as microtasks 
+  so when full rendering of react is done then these side processes will run side by side this is useEffect 
+
+  so if you use some variable and use it usign useState then whenever the state changes then the useEffect runs for those times but that is normal without useEffect this is what is called mounting 
+    useEffect(function() {
+        console.log("use effect is running);
+    })
+  then what is the use of useEffect  
+    so to take i tbetter we pass dependenceis we send function to useEffect 
+     so now it will only run once because we passed the dependency 
+
+     useEffect(function() {
+        console.log("use effect is running);
+    },[num])
+    so now if you send the dependency which is num then if it changes(teh dependecy which is num) then it will run that useEffect again
+    so when the state of the dependency changes then statement prints again 
+
+    remove strictmode from main.jsx  
+    you cna send any number of dependencies in useEffect 
+
+//react pagination 

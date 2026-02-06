@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio website</title>
+    <link rel="stylesheet"  href="portfolio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div id="header">
+        <div id="container">
+            <nav>
+                <h1 id="logo">Portfolio</h1>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p>Frontend Developer</p>
+                <h1>Hi, I'm <span>Pardhuva</span></h1>
+            </div>
+
+        </div>
+    </div>
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="m.png">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="subtitle">About Me</h1>
+                    <p>"I'm Pardhuva, a driven Computer Science enthusiast with a keen interest in software development and problem-solving. My passion lies in creating solutions that are both effective and elegant, leveraging my skills in programming and design."</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Frontend</span><br>Developer</li>
+                            <li><span>Academic Coursework</span><br>Data Structures and Algorithms,Operating Systems,Oops,DBMS</li>
+                            <li><span>Database</span><br>SQL</li>
+                            <li><span>Languages</span><br>Java,C,HTML,CSS,JavaScript,python</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>Contributor</span><br>GirlScript Summer of Code</li>  
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>B-tech</span><br>Indian Institute of Information Technology Sricity</li>  
+                            <li><span>Intermediate</span><br>Sri Chaitanya College</li>
+                            <li><span>Secondary School</span><br>Sri Chaitanya School</li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!--------------services------------->
+    <div id="services">
+        <div class="container">
+            <h3 class="subtitle">My Services</h3>
+            <div class="services-list">
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2> Web Design</h2>
+                    <p>Designed and developed a static replica of the Amazon homepage to showcase skills in
+                        front-end web development. 
+                    <p>Implemented HTML, CSS to create a responsive, user-friendly interface that mimics key</p>
+                    <a href="#">learn more</a>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        var tablinks=document.getElementsByClassName("tab-links");
+        var tabcontents=document.getElementsByClassName("tab-contents");
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+</body>
+</html>

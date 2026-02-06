@@ -1,0 +1,112 @@
+
+//colors & background 
+
+  | Prefix    | Meaning                               | Example                      |
+| :-------- | :------------------------------------ | :--------------------------- |
+| `bg-`     | background color                      | `bg-blue-500`, `bg-gray-100` |
+| `text-`   | text color                            | `text-red-600`, `text-white` |
+| `border-` | border color                          | `border-green-400`           |
+| `divide-` | divider color (for child elements)    | `divide-gray-300`            |
+| `accent-` | accent color (for inputs, checkboxes) | `accent-pink-500`            |
+
+//spacing 
+ 
+  /margin 
+
+  | Class Prefix | Applies To       | Example         | Meaning                               |
+| :----------- | :--------------- | :-------------- | :------------------------------------ |
+| `m-`         | all sides        | `m-4`           | margin on all 4 sides                 |
+| `mt-`        | top              | `mt-4`          | margin-top                            |
+| `mb-`        | bottom           | `mb-4`          | margin-bottom                         |
+| `ml-`        | left             | `ml-4`          | margin-left                           |
+| `mr-`        | right            | `mr-4`          | margin-right                          |
+| `mx-`        | left & right     | `mx-4`          | horizontal margins                    |
+| `my-`        | top & bottom     | `my-4`          | vertical margins                      |
+| `-m-`        | negative margin  | `-m-2`, `-mt-1` | pulls element closer (negative space) |
+| `auto`       | automatic margin | `mx-auto`       | centers element horizontally          |
+
+ /padding 
+  | Class Prefix | Applies To   | Example | Meaning                |
+| :----------- | :----------- | :------ | :--------------------- |
+| `p-`         | all sides    | `p-4`   | padding on all 4 sides |
+| `pt-`        | top          | `pt-4`  | padding-top            |
+| `pb-`        | bottom       | `pb-4`  | padding-bottom         |
+| `pl-`        | left         | `pl-4`  | padding-left           |
+| `pr-`        | right        | `pr-4`  | padding-right          |
+| `px-`        | left & right | `px-4`  | horizontal padding     |
+| `py-`        | top & bottom | `py-4`  | vertical padding       |
+
+  you know the difference right margin is from the external elements whereas padding is inside element with the text 
+
+//sizing 
+ 
+ | Prefix             | Meaning        | Example                      |
+| :----------------- | :------------- | :--------------------------- |
+| `w-`               | width          | `w-10`, `w-full`, `w-screen` |
+| `h-`               | height         | `h-8`, `h-1/2`, `h-screen`   |
+| `min-w-`, `max-w-` | min/max width  | `max-w-md`, `min-w-0`        |
+| `min-h-`, `max-h-` | min/max height | `min-h-screen`, `max-h-40`   |
+
+
+//flexbox & grid 
+  
+    | Prefix                | Meaning                       | Example                             |
+    | :-------------------- | :---------------------------- | :---------------------------------- |
+    | `flex`, `inline-flex` | display flex                  | `flex`, `inline-flex`               |
+    | `grid`, `inline-grid` | display grid                  | `grid-cols-3`, `grid-rows-2`        |
+    | `justify-`            | main-axis alignment           | `justify-center`, `justify-between` |
+    | `items-`              | cross-axis alignment          | `items-center`, `items-start`       |
+    | `gap-`                | space between grid/flex items | `gap-4`, `gap-x-2`                  |
+
+// positioning 
+    
+    | Prefix                                    | Meaning        | Example                 |
+| :---------------------------------------- | :------------- | :---------------------- |
+| `absolute`, `relative`, `fixed`, `sticky` | position types | `absolute top-0 left-0` |
+| `top-`, `right-`, `bottom-`, `left-`      | offset         | `top-2`, `left-4`       |
+| `z-`                                      | z-index        | `z-10`, `z-50`          |
+
+
+//typography 
+   
+    | Prefix                                 | Meaning               | Example                  |
+    | :------------------------------------- | :-------------------- | :----------------------- |
+    | `font-`                                | font family or weight | `font-bold`, `font-sans` |
+    | `text-`                                | text size             | `text-sm`, `text-2xl`    |
+    | `leading-`                             | line height           | `leading-tight`          |
+    | `tracking-`                            | letter spacing        | `tracking-wide`          |
+    | `uppercase`, `lowercase`, `capitalize` | text transform        | `uppercase`              |
+    | `truncate`, `overflow-ellipsis`        | text overflow         | `truncate`               |
+
+//borders & radius 
+
+    | Prefix     | Meaning       | Example                            |
+    | :--------- | :------------ | :--------------------------------- |
+    | `border`   | border width  | `border`, `border-2`, `border-t-4` |
+    | `rounded-` | border radius | `rounded-lg`, `rounded-full`       |
+
+
+//effects 
+
+       | Prefix                              | Meaning      | Example                            |
+        | :---------------------------------- | :----------- | :--------------------------------- |
+        | `shadow-`                           | box shadow   | `shadow`, `shadow-md`, `shadow-lg` |
+        | `opacity-`                          | transparency | `opacity-75`                       |
+        | `blur-`, `brightness-`, `contrast-` | filters      | `blur-sm`, `brightness-110`        |
+
+//transitions & animations 
+
+    | Prefix                             | Meaning     | Example                                   |
+    | :--------------------------------- | :---------- | :---------------------------------------- |
+    | `transition`, `duration-`, `ease-` | transitions | `transition-all duration-300 ease-in-out` |
+    | `animate-`                         | animations  | `animate-bounce`, `animate-spin`          |
+
+//layout helpers 
+
+    | Prefix                                      | Meaning           | Example                              |
+    | :------------------------------------------ | :---------------- | :----------------------------------- |
+    | `hidden`, `block`, `inline`, `inline-block` | display           | `hidden`, `block`                    |
+    | `overflow-`                                 | overflow handling | `overflow-hidden`, `overflow-x-auto` |
+    | `cursor-`                                   | mouse cursor      | `cursor-pointer`                     |
+    | `select-`                                   | text selection    | `select-none`                        |
+

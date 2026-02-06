@@ -1,0 +1,29 @@
+
+function parent() {
+   const [theme,setTheme] = useState("light");
+
+   return (
+     <>
+       <Header theme={theme}/>
+       <ThemeToggler onToggle={() => setTheme(theme === "light" ? "dark":"light")} />
+     </>
+   )
+}
+
+function Header ({theme}) {
+   return <h2> Current Theme: {theme} </h2>
+}
+
+function ThemeToggler ({onToggle}) {
+   return <button onClick={onToggle}> Toggle Theme </button>
+}
+
+//here theme is passed as prop from parent  to Header child 
+// callback is sent from child(ThemeToggler) to parent 
+
+// why it matters 
+ . promotes separation of concerns - each component focuses on one task 
+ . encourages reusability - same component can display different data 
+ . maintains consistency - one source of truth (state) across the app 
+ . enables scalability - easier to extend features without breaking others 
+ 

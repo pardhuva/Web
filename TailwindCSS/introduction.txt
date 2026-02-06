@@ -1,0 +1,142 @@
+//tailwindcss
+
+ tailwindcss isnt just a styling framework it is utility-first ideology that makes modern responsive websites faster and easier 
+ unlike bootstraps which comes with pre-defined components adn styles but tailwind gives you complete control through resuable utility classes 
+ so instead of custom css from scratch you can simply combine these classes to style your site exactly how you want 
+
+ . its like it will give you ingredients not whole packaged meal 
+
+ you get the flexibility to customize  everything while keeping the codebase clean and neat 
+
+ this tailwind has many component based libraries that helps to build it faster like 
+  tailwind ui, headless ui, shadcn 
+
+
+traditional css vs tailwind css 
+  
+  in traditional css you actually use classes for each tag elements then define each property 
+  like for flex -> display: flex and so on in the custom classnames  
+
+  but in tailwindcss we directly compose styles with utility classes 
+  like you directly give <div className ="flex">
+
+  every tailwind class is just a predefined rule 
+  ex: you write flex -> then tialwind represents display:flex;
+
+  here you dont need to worry about classnames and all 
+  
+  it is similar to inline styles but inline styles cant reuse them you have to write for everything 
+  but tailwind utility classes are completely reusable  whcih means you can create a small set of reusable classes  and use them  on which ever element you want 
+
+
+ tailwind play -> interactive online playground for testing css styles 
+
+ tailwind css generates styles on the fly  only for the classes we actually use this keeps the traditional css lean and efficient 
+
+ check the list of prefixes -prefix.txt 
+
+
+//tailwind css is not only just about pre-defined utility classes  its also incredibly flexible  just in time compiler also known as jit  
+ jit compiler generates styles on demand  which means tailwind keep only the exact styles your project uses keeping your final css small and  efficient 
+  means it removes all the unused styles from the utilities and keep only the used applying ones 
+
+jit is a big thing because 
+  1. it optimizes performance  generating only what i need 
+  2.  gives  you faster built time  because it doesnt need to pre-compile thousands of different classes  
+  3. it supports arbitary values which means you can pass any custom size color or property to make  your website super unique
+  4. it works seamlessly in both development and production 
+  5. it is build completely into tailwind by default without any extra setup 
+
+//layouts & flexboxes 
+
+  it provides so many utilities 
+  1. position -> where the element appears relative to its container or the viewport 
+       relative -> moves element relative to its normal position 
+       absolute ->  moves to the nearest parent 
+       fixed   -> sticks the element to the viewport so it doesnt scroll 
+       sticky ->  which behaves normally until  you scroll  
+    
+   2. display 
+        block -> which takes full width  
+        inline -> behaves like inline whcih behaves like text  whcih  doesnt have any width or height 
+        flex -> enables flexbox
+        grid -> enable css grid properties 
+
+//in all the devies how to make it responsive tailwind makes responsive designn easy by using mobile first breakpoints 
+   it gives you a set of predefined device widths ranging from small medim to large  
+   by default they set a min-width  which means it sets styles for a specific screen width  or largeer not smaller 
+   max-width  to setup styles for a specific screen width  or smaller 
+   but for tailwind css the midwidth queries will be applied by default 
+
+//media queries allow us to change css properties  dependign on the screne  width 
+  media_queries.html 
+  there sm-> small , md-> medium
+  if you use sm:bg-purple-400 -> here minimum small width this applies that color 
+   as by default minimum-width 
+   but if you want maximum then you can assign like 
+   max-sm:bg-purple-500 
+
+//we can even customize oru breakpoints 
+
+//using arbitary values 
+  just-in-time compiler  it allows you to provide arbitary values which means that you can  give like 
+   <div class="max-[600px]:bg-sky-300 min-[320px]:text-center> here fo rmin 320 you give text-center 
+
+//darmode 
+two ways to toggle darkmode manually 
+  1. use prefers-color-scheme 
+  2. use a data-attribute to automatically activate the theme 
+
+  just add the dark before the utilities dark:bg-vlack
+
+
+//how customizable tailwind css is 
+  we can mas make everything customizable 
+    by keeping it in [] ex:  text-[#973F29] 
+
+
+suppose at multiple places you are using the same style and now you want to change something then you have to change at every place as all same style 
+then you have to do changes everywhere that is when config comes 
+
+//tailwind config 
+   allows to control and organize the entire visual style of our application 
+   for writing config we have use tailwind directives 
+   configuring our pproject in a javascript file allows you  to configure directly within css 
+    check chestnut.html and chestnut.css 
+  
+//suppose if you have button you want to use that in multiple files  then 
+  1.  break the layout into multiple components instead of writing everything in a single page 
+     so creating seperate component for button 
+  2. use directives 
+     tailwind css offers   directives for each of base, components, utilities  to define  specific styles 
+     these three are parts of an approach to structuring adn organizing styles  usign configuration file method 
+    base -> applies styles globally across our project  like fintsize of all h1 tags 
+    components -> to style specific components or reusable ui elements  liek card , footers and more
+    utilities -> atomic styles for individual  properties like  margins, padding, typography, colors 
+    another directive called @apply  -> inserts tailwind css into css  
+    @layer ->  we can create custom styles for  base components adn utilities 
+
+     ex: cardComponent 
+
+     so suppose if you want same style then you can create base or compoents  if you still want some differences between like you want one contain some flex then we use 
+     utility given in the above cardCompoent.css 
+
+//another way to improving tailwind css 
+  - using useComponent libraries  liek shaten  which comes with set of predefined components like buttons 
+
+//tailwind tips and tricks 
+//special utilities
+ . accent -> for checkbox and others you can have customized colors and all 
+ . fluid texts -> when building responsive websites  so the text gets increase or decrease based on the devices
+      usually we adjsut like sm:text-7xl text-5xl 
+   but here text-[min(10vw,70px)]  
+  . file 
+     even for default layout we have to customize it 
+     using file: => do all the customisations to the input 
+  . highlights ->  when you want to overwrite somethign written  
+     selecction: bg-green-400 
+  . less js 
+      open 
+  . caret 
+      caret-pink-500 
+  

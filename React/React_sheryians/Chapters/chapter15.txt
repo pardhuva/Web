@@ -1,0 +1,75 @@
+
+API Endpoints 
+   An API endpoint is simply a URL on your backend (Node.js/Express server)
+   that performs some specific operation — like fetching data, saving data, deleting data, etc.
+   
+   Each endpoint usually corresponds to a route + HTTP method.
+ 
+  Express.js server 
+   import express from 'express';
+    const app = express();
+
+    app.use(express.json()); // allows reading JSON body data
+   
+  API Endpoints :
+   1. GET Endpoint(fetch data)
+      
+      app.get('/api/users',(req,res) =>{
+         res.json([
+             { id: 1, name: 'Pardhuva' },
+             { id: 2, name: 'Ananya' },
+         ])
+      })
+        URL → /api/users
+        HTTP Method → GET
+        Purpose → Fetch all users
+        Response → JSON array of users
+    
+    so when react calls fetch('http://localhost:5000/api/users')
+    then it will receive those two users 
+
+    2. POST Endpoint(create data)
+      route :
+       app.post('/api/users', (req, res) => {
+        const newUser = req.body; // data sent from frontend
+        console.log("New User:", newUser);
+        res.status(201).json({ message: 'User created successfully!', user: newUser });
+        });
+     URL → /api/users
+    HTTP Method → POST
+    Purpose → Add a new user
+    Request body (from frontend)
+ 
+   3. PUT Endpoint(update data)
+     app.put('/api/users/:id', (req, res) => {
+        const userId = req.params.id;
+        const updatedData = req.body;
+        res.json({ message: `User ${userId} updated`, data: updatedData });
+    });
+
+        URL → /api/users/3
+        HTTP Method → PUT
+        Purpose → Update user with ID 3
+
+   4. DELETE Endpoint :
+      
+      Route :
+        app.delete('/api/users/:id', (req, res) => {
+        const userId = req.params.id;
+        res.json({ message: `User ${userId} deleted` });
+        });
+       URL → /api/users/3
+        HTTP Method → DELETE
+        Purpose → Delete user with ID 3
+
+
+   | HTTP Method | Purpose  | Example Endpoint | Description           |
+| ----------- | -------- | ---------------- | --------------------- |
+| **GET**     | Read     | `/api/users`     | Fetch all users       |
+| **GET**     | Read one | `/api/users/1`   | Fetch user with ID 1  |
+| **POST**    | Create   | `/api/users`     | Add new user          |
+| **PUT**     | Update   | `/api/users/1`   | Update user with ID 1 |
+| **DELETE**  | Delete   | `/api/users/1`   | Delete user with ID 1 |
+ 
+
+ 

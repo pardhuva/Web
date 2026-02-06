@@ -1,0 +1,55 @@
+[{
+  "_id": {
+    "$oid": "67f25a0960f59d18f8b71237"
+  },
+  "name": "divya",
+  "age": 22,
+  "fulltime": false
+},
+{
+  "_id": {
+    "$oid": "67f2581460f59d18f8b71236"
+  },
+  "name": "madhu",
+  "age": 21,
+  "fulltime": false
+},
+{
+  "_id": {
+    "$oid": "67f25b885402b2d638f08ed9"
+  },
+  "name": "paprika",
+  "age": 23,
+  "fulltime": false
+},
+{
+  "_id": {
+    "$oid": "67f25d6660f59d18f8b71238"
+  },
+  "name": "paprika",
+  "age": 32,
+  "gpa": 2.4,
+  "fulltime": false,
+  "registrationdate": {
+    "$date": "2025-04-06T10:54:30.044Z"
+  },
+  "graduation": null,
+  "courses": [
+    "Biology",
+    "physics"
+  ],
+  "address": {
+    "street": "123 fake street",
+    "city": "bikini bottom",
+    "doorno": 4
+  }
+},
+{
+  "_id": {
+    "$oid": "67eaa0f7265b1f641eb71236"
+  },
+  "name": "pardhu",
+  "age": 20,
+  "gpa": 10,
+  "fulltime": false
+}]

@@ -1,0 +1,52 @@
+
+// Lifing State up and  managing complex state structures 
+// handling forms and controlled components 
+
+why share state ?
+  in react each component can have its own local state  but differrent component might depend on teh same  state, where the data depends 
+  like in sibling to sibling communication 
+   if they have seperate state  then inconsistency so instead of that they should share state 
+
+   so we maintain a single source of state so multiple can access 
+
+   shown in the figure code is wrong , which is maintained locally for each component 
+   instead of that we should maintain a shared state  
+
+   so as we know state in react is local to that component so we share to make it available to other
+
+  so when more than one component depends on the same data then dont duplicate across the components instead use a shared parent componet that hold the state and this mechanism is called lifting state up  
+
+//managing complex state 
+  1. using objects/arrays - use spread operator 
+  2. using useReducer - for grouped or complex updates 
+      when multiple related fields change together , useReducer is more suitable , 
+      you can change all values at once 
+   useReducer cetralizes the state logic ,mkaing it easier to handle state related  changes  
+   // it is used for forms , ui 
+  3. split state logically to small to keep it simple 
+
+ 
+ //handling forms in react
+  in traditional html the user input  is the value kept in the value of the input but 
+  in react , the value of the input is kept in component- state property and updated only with the setState function 
+  in controlled component form data is handled by react component 
+  controlled components are preferable for predictable updates and validation 
+  controlled components means state that we meant 
+
+  // for forms then use a single state object it is more cleaner way 
+
+// use event.preventDefault() to control form submission
+   so actually in normal html whenever we submit a form it re-renders the whole paeg for every submit 
+   in react it will be handled through state and send it through api call.
+   browser refresh doent happen , so the browser default action doesnt happen  
+
+// using libraries 
+  if in manual way suppose a form with email and password so we maintain state for each and validation condition for each seperately 
+    and also include error state  , without library 
+  if using library then everythign can be done in one place all the validations can be done at in place 
+
+//controlled vs  uncontrolled 
+  controlled compoennts are handleed by the react state whereas the uncontrolled components are handled in the traditional manner 
+   controlled compoents have real time updates  
+   in uncontrolled components mostly it is doen manually eveyrthing 
+   

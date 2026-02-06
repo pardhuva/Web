@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pardhuva's Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #2A3663;
+            
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        #header {
+            background-image: url('https://source.unsplash.com/random/1920x1080?technology,code');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        #header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        #header .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        #logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            transition: transform 0.3s ease;
+        }
+
+        #logo:hover {
+            transform: scale(1.05);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+            display: inline-block;
+        }
+
+        nav ul li a:hover {
+            color: #ff004f;
+            transform: translateY(-3px);
+        }
+
+        .header-text {
+            margin-top: 15%;
+        }
+
+        .header-text h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .header-text p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease 0.5s forwards;
+        }
+
+        .header-text span {
+            color: #ff004f;
+        }
+
+        /* About Section Styles */
+        #about {
+            padding: 80px 0;
+            background-image: url('https://source.unsplash.com/random/1920x1080?abstract,blue');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .about-col-1 {
+            flex-basis: 35%;
+        }
+
+        .about-col-1 img {
+            width: 100%;
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .about-col-1 img:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .about-col-2 {
+            flex-basis: 60%;
+        }
+
+        .subtitle {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .subtitle::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 0;
+            height: 3px;
+            background: #ff004f;
+            transition: width 0.3s ease;
+        }
+
+        .subtitle:hover::after {
+            width: 100%;
+        }
+
+        .tab-titles {
+            display: flex;
+            margin: 20px 0 40px;
+        }
+
+        .tab-links {
+            margin-right: 50px;
+            font-size: 1.2rem;
+            font-weight: 500;
+            cursor: pointer;
+            position: relative;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .tab-links:hover {
+            color: #ff004f;
+            transform: translateY(-3px);
+        }
+
+        .tab-links::after {
+            content: '';
+            width: 0;
+            height: 3px;
+            background: #ff004f;
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            transition: width 0.3s ease;
+        }
+
+        .tab-links:hover::after,
+        .tab-links.active-link::after {
+            width: 50%;
+        }
+
+        .tab-contents {
+            display: none;
+        }
+
+        .tab-contents.active-tab {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tab-contents ul li {
+            list-style: none;
+            margin: 10px 0;
+            transition: transform 0.3s ease;
+        }
+
+        .tab-contents ul li:hover {
+            transform: translateX(10px);
+        }
+
+        .tab-contents ul li span {
+            color: #ff004f;
+            font-size: 1rem;
+        }
+
+        /* Services Section Styles */
+        #services {
+            padding: 80px 0;
+            background-image: url('https://source.unsplash.com/random/1920x1080?pattern,dark');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .services-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 40px;
+            margin-top: 50px;
+        }
+
+        .services-list div {
+            background: rgba(74, 98, 138, 0.8);
+            padding: 40px;
+            font-size: 1rem;
+            font-weight: 300;
+            border-radius: 10px;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .services-list div:hover {
+            background: rgba(255, 0, 79, 0.8);
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .services-list div i {
+            font-size: 50px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .services-list div:hover i {
+            transform: scale(1.2);
+        }
+
+        .services-list div h3 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .services-list div a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 0.9rem;
+            margin-top: 20px;
+            display: inline-block;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .services-list div:hover a {
+            color: #2A3663;
+            transform: translateX(5px);
+        }
+
+        /* Projects Section Styles */
+        #projects {
+            padding: 80px 0;
+            background-image: url('https://source.unsplash.com/random/1920x1080?technology');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .projects-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 40px;
+            margin-top: 50px;
+        }
+
+        .project {
+            background: rgba(26, 26, 46, 0.8);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .project img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project h3 {
+            font-size: 1.5rem;
+            margin: 20px;
+        }
+
+        .project p {
+            margin: 0 20px 20px;
+            font-size: 0.9rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4ecca3;
+            color: #1a1a2e;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 0 20px 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #45b393;
+        }
+
+        /* Contact Section Styles */
+        #contact {
+            padding: 80px 0;
+            background-image: url('https://source.unsplash.com/random/1920x1080?abstract,dark');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .contact-content {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-info p {
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-links a {
+            color: #fff;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #ff004f;
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .contact-form .btn {
+            align-self: flex-start;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .header-text h1 {
+                font-size: 2.5rem;
+            }
+            .header-text p {
+                font-size: 1.2rem;
+            }
+            .row {
+                flex-direction: column;
+            }
+            .about-col-1, .about-col-2 {
+                flex-basis: 100%;
+            }
+            .about-col-1 {
+                margin-bottom: 30px;
+            }
+            .tab-links {
+                margin-right: 20px;
+                font-size: 1rem;
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            .contact-content {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .contact-info,
+            .contact-form {
+                flex-basis: 48%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <nav>
+                <h1 id="logo">Portfolio</h1>
+                <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p>Frontend Developer</p>
+                <h1>Hi, I'm <span>Pardhuva</span></h1>
+            </div>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="m.png" alt="Pardhuva's portrait">
+                </div>
+                <div class="about-col-2">
+                    <h2 class="subtitle">About Me</h2>
+                    <p>"I'm Pardhuva, a driven Computer Science enthusiast with a keen interest in software development and problem-solving. My passion lies in creating solutions that are both effective and elegant, leveraging my skills in programming and design."</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="openTab('skills')">Skills</p>
+                        <p class="tab-links" onclick="openTab('experience')">Experience</p>
+                        <p class="tab-links" onclick="openTab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Frontend Development</span><br>HTML, CSS, JavaScript, React</li>
+                            <li><span>Responsive Design</span><br>Mobile-first approach, CSS Grid, Flexbox</li>
+                            <li><span>Version Control</span><br>Git, GitHub</li>
+                            <li><span>UI/UX Design</span><br>Figma, Adobe XD</li>
+                            <li><span>Performance Optimization</span><br>Webpack, Lighthouse</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2023 - Present</span><br>Contributor at GirlScript Summer of Code</li>
+                            <li><span>2022 - 2023</span><br>Frontend Developer Intern at Tech Innovators Inc.</li>
+                            <li><span>2021 - 2022</span><br>Freelance Web Developer for Local Businesses</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2020 - Present</span><br>B.Tech in Computer Science, Indian Institute of Information Technology Sricity</li>
+                            <li><span>2018 - 2020</span><br>Intermediate, Sri Chaitanya College</li>
+                            <li><span>2018</span><br>Secondary School, Sri Chaitanya School</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2 class="subtitle">My Services</h2>
+            <div class="services-list">
+                <div>
+                    <i class="fas fa-code"></i>
+                    <h3>Web Development</h3>
+                    <p>Creating responsive and user-friendly websites using modern web technologies. Expertise in HTML, CSS, JavaScript, and various frameworks.</p>
+                    <a href="#" aria-label="Learn more about Web Development">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2 class="subtitle">My Projects</h2>
+            <div class="projects-list">
+                <div class="project">
+                    <img src="https://source.unsplash.com/random/400x300?hospital" alt="Hospital Management System">
+                    <h3>Hospital Management System</h3>
+                    <p>A comprehensive web-based system for managing hospital operations, patient records, and appointments.</p>
+                    <a href="https://github.com/pardhuva/Hospital-ManagementSystem" class="btn">View Project</a>
+                </div>
+                <div class="project">
+                    <img src="https://source.unsplash.com/random/400x300?ecommerce" alt="Amazon Webpage Clone">
+                    <h3>Amazon Webpage Clone</h3>
+                    <p>A responsive front-end clone of the Amazon homepage, showcasing attention to detail.</p>
+                    <a href="https://github.com/pardhuva/amazon_webpage" class="btn">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="subtitle">Contact Me</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p><i class="fa-solid fa-phone"></i> +91 8374358489</p>
+                    <p><i class="fa-regular fa-envelope"></i> pardhuvabheemarati@gmail.com</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/pardhuva-bheemarati-03a9b02b8/" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/pardhuva/" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                    <a href="#" class="btn">My Resume</a>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function openTab(tabName) {
+            var tabLinks = document.getElementsByClassName("tab-links");
+            var tabContents = document.getElementsByClassName("tab-contents");
+
+            for (var i = 0; i < tabLinks.length; i++) {
+                tabLinks[i].classList.remove("active-link");
+            }
+            for (var i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove("active-tab");
+            }
+
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabName).classList.add("active-tab");
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Parallax effect for background images
+        window.addEventListener('scroll', function() {
+            const parallax = document.querySelectorAll('.container');
+            let scrollPosition = window.pageYOffset;
+
+            parallax.forEach(container => {
+                container.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px)';
+            });
+        });
+    </script>
+</body>
+</html>

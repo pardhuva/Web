@@ -1,0 +1,22 @@
+//localstorage 
+ it means memory of the browser 
+  localStorage is a built-in browser feature (not from the website’s server) that lets your browser save small bits of data locally on your computer — even after you close or reload the browser.
+   It’s stored by the browser, but it’s controlled by the website’s code.
+
+   The browser (like Chrome, Firefox, Edge) manages the storage.
+   The website’s JavaScript code tells the browser what to store there.
+
+   | Storage type          | Managed by      | Stored where     | Stays after reload               |
+| --------------------- | --------------- | ---------------- | -------------------------------- |
+| **localStorage**      | Browser         | User’s computer  | ✅ Yes                            |
+| **sessionStorage**    | Browser         | User’s computer  | ❌ No (deleted when tab closes)   |
+| **Database / Server** | Website backend | Website’s server | ✅ Yes, and shared across devices |
+
+  you can remove the localstorage data by 
+   localStorage.clear()
+   sessionStorage.clear()
+
+   to save items in localstoraeg in key-value pairs  
+   localStorage.setItem('user','Sarthak')
+   
+   check LocalStorage.jsx in React_practice

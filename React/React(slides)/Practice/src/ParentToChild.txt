@@ -1,0 +1,16 @@
+
+function parent() {
+   const [theme,setTheme] = useState("light");
+
+   return (
+     <>
+       <Header theme={theme}/>
+       <ThemeToggler onToggle={() => setTheme(theme === "light" ? "dark":"light")} />
+     </>
+   )
+}
+
+function Header ({theme}) {
+   return <h2> Current Theme: {theme} </h2>
+}
+

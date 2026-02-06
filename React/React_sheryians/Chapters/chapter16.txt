@@ -1,0 +1,22 @@
+
+//Advanced Routing 
+  check advanced folder 
+
+  here you dont need to add there navbar and footer for every other component you just need to only define the component 
+  mentioned in the navbar 
+
+  In React Router, <Outlet /> is a placeholder (or “slot”) that tells React where to render child routes inside a parent route.
+  <Outlet /> = placeholder for rendering nested routes.
+
+  useParams() from 'react-router-dom' -> get the parameters from url suppose /courses/1 this will return the 1 as the parameter 
+  
+  this using of useparams and that routing /courses/:id these are called dynamic routing 
+
+//now using useNavigate from 'react-router-dom' you can get this and assign it to some variable 
+ now you can sue this variable anywhere to navigate 
+
+ suppose if we use this in about page where you have one return to home page button so when clicked you go to that function where you assign 
+   variable if -> navigate('/') this will navigate to the hoem page 
+
+    so you can also give navigate(-1) this goes one step backward 
+    

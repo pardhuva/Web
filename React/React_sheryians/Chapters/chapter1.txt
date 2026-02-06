@@ -1,0 +1,65 @@
+
+what is reactjs?
+ it is basically javasscript library used for UI(frontend) made by meta 
+
+what is problem before reactjs ??
+  so suppose in facebook you have messsages count 3 and you saw one then the message count should reduce but 
+  before to update you have to reload the page means you have to every other element or feature too only after that whole reload of the page 
+  only then it gets updated if you use normal js 
+
+  that is when reactjs came which is based on component based architecture 
+
+what is component based architecture ??
+ means whoel website is divided into small different chunks so if there is any change in any chunnk only that chunk gets updated without whole reload 
+ adn other chunks remains same if there is no change in the chunks it becomes smooth 
+
+ ex: in youtube if you keep on changing the videos the other sections will not change on the video display changes the naem on the searchbar will not change 
+
+ what are libraries and frameworks ??
+  libraries are used to give feature to particular website 
+   ex: gsap(animations), lenis(smooth scrolling), Reactjs(ui)
+   in library every feature follows different library 
+  frameworks -> all inbuilt 
+     ex: nextjs, angular , remix 
+
+  Library: Gives you tools. You decide when and how to use them.
+   Example: A hammer in your toolbox — you pick it up and use it when needed.
+  Framework: Gives you a ready-made structure. It decides when to call your code.
+   Example: A house under construction — you fill in the rooms, but the structure and flow are already set.
+
+   Library = you’re in charge; you use it when needed.
+   Framework = it’s in charge; you fit your code into its structure.
+
+
+why to use type = module ??
+ so you do multiple imports and exports between files so for makign that happen we ues type = module so 
+ import and exports happen smoothly also to use strictmode  
+
+ import -> bringing something 
+ export -> delivering something 
+
+ export - 2types 
+ 1. named -> particular
+ 2. default -> some default delivery 
+ so if you do export a then in import too should be the same name a    -> export const a = 10;
+ but if you do export default then you can import it with any name     -> export default const a = 10;
+
+
+Real Dom vs Virtual DOM 
+  real dom is the actual dom like html tree like structure 
+  top html next head body next title , header,sectiosn and next images and all 
+
+    the problem in rela dom is that if you change something in any section then it will re-render whole page 
+    it takes too much time 
+
+    that is when virtual dom came with react 
+
+ virtual dom : copy of the real dom 
+  so if you do somechanges in some section in virtual dom then you compare with the rela dom if there ar eany differences and then update only the differences on the real dom 
+  it will not re-render whole dom 
+
+
+what is JSX??
+  Javascript xml -> combination of html and js 
+  inside js you write html 
+  

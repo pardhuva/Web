@@ -1,0 +1,22 @@
+//parent component 
+ function parent() {
+    const handleMessage = (childData) => {
+        alert(`Message from child : ${childData}`);
+    }
+
+    return (
+        <div>
+          <h2>Parent Component </h2>
+          <Child onSend={handleMessage} />
+        </div>
+    )
+ }
+
+ //child component
+  function Child({onSend}) {
+      return (
+         <button>onClick {() => onSend("Hello Parent, this is child")}> Send Message to Parent </button>
+      )
+  } 
+
+  

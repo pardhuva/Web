@@ -1,0 +1,68 @@
+command in terminal - (npm create vite@latest)  - it is to create a react app 
+  the above will create an project now change the directory 
+//to get the react app
+ cd my react-app
+ npm install
+ npm run dev 
+
+ //introduction
+
+//node modules  contains  external libraries and packages  that my project needs 
+//public folder contains public assets 
+
+//main react app is from main.jsx which import the app.jsx component 
+
+//index.html is the main thing out here where you implement the main.jsx 
+
+//so our project will be in the app component then the app compponent is imported in main.jsx and then that is imported into the index.html file for the output on the browser 
+
+// in the component files we use htmll inside the js functions then we export them to the app.jsx then that app.jsx is exported to main.jsx 
+//in the app component you can add other components by syntax <Header/>
+
+//also make sure that in function there cna be only one element 
+//even in the app component file the components like header, footer can be in single element then use <> </>
+
+//we can reuse the components many number of times 
+//react is all about reusing components , a component is small section of code that can include javascript and html your function will return that code and make it reusable 
+
+
+//card components include a picture, title and description 
+
+//how to style react components with css 
+// (not including external frameworks or preprocessors)
+//1. External   - styling using css 
+//2. Modules - create a stylesheet exclusively for each component
+//3. INLINE   - for small elemnets wihtout another css stylesheet inline styling in the function itself 
+(button.jsx)
+
+//props - read-only properties that are shared between components.
+// a parent component can send data to a child component.
+// <Component key = value />
+// it is used like see before we used card component but there the data is similar for all the cards then this props 
+   // come into picture you can use child components key :value pair for unique cards
+// ex:student.jsx
+
+//proptypes = a mechanism that ensures that the passed value  is of the correct datatype.
+//if the  age: you want it to be number not the string {PropTypes.number}
+
+//defaultProps = default values of rprops in case they are not passed from the parent component
+// name: "guest"
+
+//conditional rendering  = allows you to control what gets renderd in your application based on certain conditions (show, hide, or change components)
+//(show, hide, or change components ) - userGreeting.jsx
+
+//rendering lists - List.jsx
+
+//click event = an interaction when a user clikcs on a specific element. 
+//              we can respond to clicks by passing
+//              a callback to the onClick event handler
+//clickbutton.jsx
+
+
+
+
+
+
+
+
+

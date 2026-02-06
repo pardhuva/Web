@@ -1,0 +1,53 @@
+computers are nothing but just simple machines that perform complex actions through many layers of abstraction 
+
+//its origin 
+1. earliest is abacus for additions and those all 
+2. astrolabe : to enable ships to calculate their latitude at sea 
+
+computer - richan braithway 
+
+punch crads - paper cards with a grid of locations 
+
+transistors can be used to build logic gates which can evaluate boolan statements 
+in boolean algebra only two binary values : true adn false  
+
+binary digit 1 or 0 is called bit 
+8bits - 1 byte 
+1 kilobyte : 1000 bytes (10^3)
+1 megabyte : million bytes (MB) (10^6)
+1 gigabyte : billion bytes (GB) (10^9)
+1 terabyte : trillion bytes (TB) (10^12)
+1 quadillion - (10^15)
+1 quintillion - (10^18)
+1 sextillion- (10^21)
+1 septillion - (10^24)
+
+that is why the photos are so clear because they use millions of bits 
+32 - bit (31bits for data and 1 bit for sign ) 1- negitive 0-positive 
+range is +- 2 billion roughly 
+
+64-bit around 9.2 quintillion 
+
+computers should have memory known as addresses in order to store and retrieve values 
+even you should be able to store the folating point numbers 
+32-bit floating point number 
+1 bit sign bit + 8bits exponent + 23 bits significand bits 
+625.9 => 0.6259 x 10^3  => here significand is 6259 and 3 is exponent 
+
+letters also can be represented through bits 5 bits ar eenough to reprsent 26 letters 
+but for lowercase and upper use  7bit 
+
+//how computers calculate:
+ALU(arithmetic and logical unit ) the mathematical brain of a computer 
+it includes two units arithmetic and logical unit 
+1. arithmetic unit 2. logical unit 
+arithmetic unti which is responsible for handling all numerical operations (these operations are done using the gates half adder and full adder ar eused for these )
+logic unit - performs logical operations like AND,OR,NOT 
+
+//alu has flags in it that helps during the operations 1. overflow, 2. zero, 3.negative 
+so with the gates we cna build simple ALU that performs arithmetic and logicoperatios 
+as something shoudl store the output or the intermediate results that is when RAM is used
+
+//memoery 
+memoery is a latch that stores 
+group of latches operating is clled register which holds a single number and the number of bits in a register is called its width 

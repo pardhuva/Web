@@ -1,0 +1,89 @@
+
+//state and props in React 
+
+// what is state in React ?
+  state represents data that changes over time in a component 
+  it is managed within the component itself 
+    App 
+     - counter1 (Count =0)
+     - counter2 (count = 10)
+
+  causes re-rendering when updated 
+  state = components memory 
+
+  props - static input that is passed from parents 
+  state is dynamic  data that changes in the component ( independent of other components(like parents))
+
+  if there is no state then the component forgets the data after eveery re-render so state helps in remembering that data using state 
+
+
+//Props vs state 
+   Props -> passed  from parent 
+    they are Read-only 
+   State -> managed locally 
+    they are mutable (can be changed directly)
+   Props are external inputs, state is internal memory 
+   both trigger re-renders when updated 
+
+
+//Hooks 
+  these are special functions in react that lets us add features, lifecycles methods 
+
+// The useState Hook 
+ syntax :
+  const [state, setState]  = useState(initialValue)
+ ex: 
+  const [count, setCount] = useState(0)
+
+  state -> current state value 
+  setState -> function to update the value 
+  initialValue -> starting value 
+usestate gives variable memory 
+
+// how state updates work ?
+  state updates are asynchronous 
+  react batches multiple updates for performance 
+   ex: 
+      setCount(count +1)
+  never mutate state directly (use the setter function)
+   avoid count++   use  setCount(count+1)
+  updating based on previous state 
+    setCount(prevCount => prevCount +1)
+  
+  there should be ability to track changes and leading to re-render or unpredictable results  that is why we use setter functions instead of directly modifying 
+
+//managing complex state 
+  for objects or arrays, use the spread operator 
+    ex: setUser({...user, name: e.target.value});
+  maintain immutability for predictable updates 
+
+// input form state 
+  use useState to manage  form inputs 
+  bind input value to state variable 
+  use onChange event to update the state 
+  demonstrates two-way data binding 
+
+//common mistakes 
+  mutating state directly (state.pus(), count++)
+  calling  setState in loops without condition 
+  assuming immediate state updates 
+  storing derived data in state unnecessarily 
+  use functional updates when new value depends on previous value 
+
+//best practices 
+  keep state minimal and relevant 
+  lift state up when multiple components need it 
+  split complex state into smaller pieces 
+  always initialize properly (e.g. ,[],{} or null)
+
+
+//quiz 
+ 1. In react props are immutable and state is mutable 
+ 2. state must be updated using the setter function 
+ 3. when state changes in a component , the entire component re-renders 
+ 4. state updates asynchronous in React because to allow batching and improve performance , to avoid blocking the DOM 
+ 5. correct way to increment a count value stored in state 
+     setCount(count +1 ) (this is correct)       setCount(count++)  // this is wrong 
+ 6. if a parent component re-renders, what happens to its child components -> children re-render only if their props change 
+ 7. what happens if you mutate state directly instead of using the setter  -> the UI might not update correctly 
+  

@@ -1,0 +1,547 @@
+//it is a programming language
+//javascript is a synchronous single-threaded language (execute solly one command at atime and in a particualr order in a syncronous way )
+
+js code that contains instructions that the computer takes and returns the output
+
+in inspect at console you can write the javascript code that runs automamtically 
+alert("pardhuva"); this gives the alert sign 
+
+Console.log is used to log(print) a message to the Console
+console.log("pardhuva");
+
+to connect js with browser we use html file  as they are connected directly with webbrowsers
+<!-- <script src="jsfilename"></script> -->
+ script tag is written inside body tag
+
+/variables in js
+variable are containers for data 
+
+/javascript is a dynamically typed
+/unlike other languages storing values in their respective types in js we can store any value in the variable 
+
+= is the assignment operator
+/variable rules
+.variables names are case sensitive;a and A are different 
+.only letters,digits,underscore,$ are allowed (not even space)
+only a letter ,underscore(_) or $ should be the 1st character
+.reserved words cannot be variable names 
+
+/let,const&var 
+var :variable can be redeclared & updated a global scope variable
+let:variable cannot be redeclared but can be updated a block scope variable
+const:variable cannot be redeclared or updated a block scope variable
+//check variables.js 
+
+{} this is called as block we can redclare with let in different blocks 
+if you declare a normal variable without any var let and all and next if you declare the same variable with let then the remaining instructions even will not run
+
+/datatypes in js
+Number,String,Boolean,Undefined,Null,BigInt,Symbol
+
+primitive datatypes (7)
+non-primitive datatypes -objects(arrays,functions)
+
+objects-collection of values
+ex:student object name string age number marks number
+in objects key value pair
+
+from objects you can even access individual fields  
+ex: student["name"]  object["key"]
+for accessing keys
+ex: object.key or object["key"]
+
+for modifying in objects normally ex:let a=10; next a=20; in this we will update but for objects
+object["key"]=object["key"]+1 in this way we are modifying  using assignment operators
+
+const variables cant be modified but const object keys can be modified like above
+
+//in console you can perform all arithematic operations
+even for strings "123"+45 gives the output "12345"
+
+/operators
+/arithematic operators
++ - * / modulus(% remainder) exponentiation(**) increment(++) decrement(--)
+
+/assignment operators
+= += -= *= %= **=
+//comparison operators
+== (equal to ) ===(equal to and type) !=(not equal) !==(not equal to and type)
+> >= < <=
+
+/logical operators true or false
+logical AND (&&) OR(||) NOT (!)
+
+/conditional statements
+to implement some condition in the code
+if ,if-else,if-elseif-else
+
+/ternary operators
+condition?true output:false output
+age>18?"adult":"not adult";
+
+//MDN docs  for other topics that are not discussed
+
+alert("") it is a message you will get top of your wesite pop up
+prompt("") it is also gives message and also takes the user input
+
+//loops and strings
+loops are used to execute a piece of code again and again
+for(let i=1;i<=5;i++){} three steps in condition intitalisation stopping condition and the updation
+there you are defining i only used inside loop but if you declare it as var it is global you can access outside the loop but mostly we wont use var
+
+//while
+while(condition){}
+
+//dowhile
+do{     } while(condition);
+
+//for-of loop  and for-in loops used mostly in strings and arrays
+for(let val of strVar){
+}
+
+for-in loops are used for objects or arrays for-of loops are not used for objects
+for(let key in obj){  
+}
+
+//strings in js
+string is a sequence of characters used to represent text
+//create string 
+let str="apna college";
+String length
+str.length
+string indices   str[0],str[1],str[2]
+
+//template literals 
+a way to have embedded expressions in strings
+`this is template literal`
+//string interpolation 
+to create strings by doing substitution of placeholders
+`string text ${expression} string text`
+
+//escape characters  in strings they will not be printed they do some action
+\n this character gives the next line 
+\t gives tab space
+both counted as single character escape character length is 1
+
+//string methods(do some work)
+in javascript also they are immutable directly btu you can us euse these methods to modify
+strings doesnot change in javascript they are inmutable 
+they are builtin functions to manipulate a string
+when methods are used new string will be created
+
+str.toUpperCase()
+str.toLowerCase()
+str.trim()  //removes whitespaces
+str.slice(start,end?)  //returns the part of a string 
+you can also concat the strings using +
+str1.concat(str2) //joins str2 with str1
+str.replace(searchVal,newVal) only once it will be replaces if you want to repalce all then use .replaceALL ("","") then it wil replace all the oen that you want to replace
+str.charAt(idx)  // it gives  the character  at the index idx
+
+for some more string methods go to mdn and explore some more methods \
+
+//arrays
+collections of items
+instead of using objects for same type of information to store like student marks stud1=20 stud2=21 so on that that it is better to use arrays
+create arrays
+let idols=["rm","jin","suga","v","hope"];
+
+array is also type of object
+key value pair but here keys are index numbers
+arrays are mutable we can change th values if we know the index but not like strings they are immutable they cant be changed 
+
+//looping over an array
+loops are iterable they are used to iterate for itens like (string objects arrays) which are collections of items as string is collection of characters objects key vlaue pair collections arrays collection of items
+
+//array methods
+.length for finding the lenght of the string
+Push() add to end
+Pop() delete from end and return 
+toString() converts array to string
+concat() join multiple arrays and return result
+unshift() add to start
+shift() delete from start and return 
+slice(startidx,endidx) returns a piece of the array
+splice(startidx,delcount,newelements) change original array(add,remove,replace);  if you want to add then make delcount as 0
+//for deleting arr.splice("si","counnt")   //for replace arr.splice("si","count","replace element")
+dont try to use replace function here it is only for strings
+
+
+//functions in js
+block of code that performs a specific task can be ivoked whenever needed
+
+//function definition
+function functionName(){
+    //do some work
+}
+//fucntion call
+functionName();
+
+function functionName(param1,param2,....){
+    //do some work;
+}
+
+//arrow functions
+compact way of writing a function
+
+const functionName=(param1,param2)=>{   here arrow for using the variables in the function
+    //do some work
+}
+
+//funciton that takes string as an input and returns the number of vowels in the string
+//foreach loops in arrays
+
+arr.forEach(callBackFunction)
+callBackFucntion :it is a fucntion to execute for each element in the array
+callback is a function passed as an argument to another function
+//we use foreach we wnat to perform some work on each value of that datastructure
+//(item,position,array itself)
+
+//if a fucntion associates with an object we will call it as method
+//the object can be any datastructure
+ 
+//in js function can also be used as parameters or can be returned too  that fucntion we call it as higherorder fucntions
+
+//for each value in the array print the square using foreach
+
+//higher order function or methods- in which fuction is parameter or return type of another fucntion are called as higher order fucntions example callback fucntions
+
+//array methods
+//map methood
+//creates a new array with the results of some operation the value its callback returns are used to form new array
+//same as foreach but there no new array is created in for each but for map  new array is created
+
+arr.map(callbackfunction(val,index,array))
+
+//filter method
+creates a newarray of elements that give true for a condition/filter
+arr.filter(callbackfunction(val,idx,arr));
+
+//Reduce method
+performs some operations and reduces the array to a single value it returns that single value
+like sum average
+
+
+//DOM(document object model)
+
+//three muskeeters of web
+/html(structure) where the content resides
+/css(style)     like design moving color
+/js(logic)  adds logic to the webpage
+
+//starter code
+/these when you are directly writing the content(css or js) html file without creating another file 
+<style> tag connects html with css
+<script> tag connects html with js
+
+//if we make seperate files then it will increase readibility, modularity  helps with browser caching 
+
+//window object
+the window object represents an open window ina browser itis browsers obejct(not javascripts) and is autoamtically created by browser
+means  when an newtab is opened a javascript object is created
+it is a global object with lots of properties and methods
+window.document gives the entire document 
+console.log() for printing whereas console.dir() works related to document ->prop methods
+
+//DOM
+actually window object is a new tab or new page and in that 
+when a wen page is loaded the browser creates a Document Object Model(DOM) of the page 
+mean actually in javascript we cna access all the html tags how? all the content is converted into an obejct and javascript can access it this object is document obejct 
+ this document object is present in window object
+
+console.log is to print
+console.dir  is for special objects like documents to print the properties and methods
+
+for accessing html in js is console.dir(window.document) this gives the window document  for body we can use like document.body 
+
+//for dynamic changes or manipulation we use dom objects
+
+//DOM manipulation
+
+//selecting with id
+ document.getElementById("myid")
+//selecting with class
+ document.getElementsByClassName("myclass")
+//selecting with tag
+ document.getElementsByTagName("p")
+
+//query selector  returns the node list 
+document.querySelector("myId/mayClass/tag")   //returns first element    for id use #id
+document.querySelectorAll("myId/myClass/tag")   //returns a NodeList
+
+//properties for accessing the elements and changing their values
+tagName: returns tag for element Nodes
+innerText: returns the text content of the element and all its children
+innerHTML: returns the plain text or html contents in the element  the  difference with innerText is that above it only gives the inner text but here it gives along with the tags
+textContent: returns textual content even for hidden elements
+
+//here if we use like above it will remains the same div.innerText="abcd" the old written one will be erased and the newone will be replaced  these are that i swhy called as dynamic changes at runtime
+
+//part 2
+
+//continuation of dom manipulation
+//attributes
+element.getAttribute(attr) //to get the attribute value
+.setAttribute(attr,value)  // to set the attribute val 
+
+//style to access and modify the style of any node
+.node.style
+
+//insert elements upto now we saw how to access and change the values of the elements now how to insert the elemetns
+
+//for inserting the element it is two step process creating the element and add the element
+
+let el=document.createElement("div")
+node.append(el)  //adds at the end of the node(inside)
+node.prepend(el) //adds at the start of node(inside)
+node.before(el) //adds before the node(outside)
+node.after(el)  //addss after the node(outside)
+
+//delete element
+node.remove() //removes the node
+
+classList is the collection of the class attributes of the element 
+element(node list) which will be returned when queryselector is used
+element.classList  //returns the collection of the attributtes of the element 
+//you can also add some more attributes using classList and remove attributes
+element.classList.add("newattribute")
+element.classList.remove("newattribute")
+
+
+//events
+
+//the change in the state of an object is known as event
+events are fired to notify code of "interesting changes" that may effect code execution
+.mouse events(click,double click)
+.keyboard events(keypress,keyup,keydown)
+.form events(submit)
+.print event and many more
+
+//these arise form user interactions
+
+//for buttons onclick is one attribute  
+onclick="console.log('button was clicked'); alert('hello')""  //here some event is done we call it as event handling
+//check in google for some more events mdn events
+//these are all called as inline event handling (handling the events inside the html tag)
+
+//event handling in js
+node.event = ()=>{
+    //handle here
+};
+if for event if you define multiple handlers then the last created handler is implemented
+
+//event object
+it is a special object that has details about the event
+all event handlers have access to the event objects properties and methods
+node.event=(e)=>{
+    //handle here     //here e is the event obejct 
+}
+
+//actually handling events in two ways one is inline handling in html code drawback is html code becomes bulk other is eventshandling in js disadvantage is that for each event you have to create an event object so to avoid this you use event listeners
+//event listeners
+here we create functions for each event multiple event listeners are created to handle each event
+node.addEventListener(event,callback)   //callback-function acts as argument to another function  so when the event specified is occured the function  is invoked it is type of handler
+node.removeEventListener(event,callback) 
+same eventlistener is used multiple times to handle different tasks like in events.js
+//the callback reference should be same to remove 
+
+//box.disabled=true; is used for disabling
+
+//to add shadow effects
+box-shadow: offset-x offset-y blur-radius spread-radius color;
+box-shadow: 10px 15px 20px rgba(0, 0, 0, 0.3);  
+
+//for random choices Math.random() 
+and here choices are 3 so if we create an array store those choices there and fro finding the random index 0 to 2 but the math.random gives interms of 0. so for o to 2 you multiply with number for that range 
+for math.random*3 this gives the numbers between 0 to 2 
+
+
+//two miniprojects 
+//tic tac toe
+//stone paper scissors
+
+//classes &objects
+
+//prototypes in js
+a javascript object is an entity having state and behaviour (properties and method)
+js objects have a special property called prototype
+we can set prototype usign __proto__
+
+means actually we define properties and methods for an object which was created by us
+but prototype is a special property that id builtin which has both properties and methods
+ for ex object.toString is an property that is builtin 
+
+ //array is also a type of object
+ it also have some builtin methods like arr.push() even we dont define they are builtin they are derived from prototype object
+ //for all objects  in js each object inherit some methods from this prototype object
+//even in objects we can create methods
+in objects this represent the same object
+
+we can also create a prototype so that some methods from one object can be used in another object
+* if object and prototype have same mehtod then objects method will be used  
+
+//classes in js
+class is a program code template for creating objects
+those objects will have some state(variables) and some behaviour(functions) inside it.
+class MyClass{
+    constructor(){
+
+    }
+    myMethod(){
+
+    }
+}
+let myObject=new MyClass();
+
+constructor method  is automatically invoked by new it initializes object
+
+//inheritance in js
+inheritance is passing down properties and methods from parent class to child class
+class Parent{
+
+}
+class Child extends Parent{
+
+}
+** if child and parent have same method childs method will be used(method overriding)
+
+//super keyword
+the super keyword is used to call the constructor of its parent class to access the parentss properties and methods
+super(args)    //calls parents constructor
+super.parentMethod(args) 
+//the child class is called derived class as it was derived from the parent
+
+//if you create  constructor in the child class  before instialising  the object in the child constructor you have to  call the parent class constructor using super keyword
+//to access the super class methods in chidl class you can use super.methodname();
+
+//error-handling
+if any error occurs the remaining code after the error will not be printed but  if you use trycatch then the remaining code will be take palce normally without halting
+try-catch
+try{
+    ...normal code
+}catch(err){   //err is error object
+    ..handling error
+}
+
+
+//async await >> promise chains >> callback hello
+
+//Sync in js
+Synchronous 
+synchronous means the code runs in a particular sequence of isntructions given in the program 
+each instruction waits for the previous instruction to complete its execution 
+//Asynchronous 
+due to synchronous programming sometimes imp instructions get blocked due to some previous instructions which causes delay in the UI 
+asynchronous code execution allows to execute net instructions immediately and doesnt block the flow 
+
+//api is like when request is sent it gives the output
+it might take some time so if we use synchronous it might take more time for remaining instructions after api so thats why we use asynchronous programming
+
+setTimeout() //it is a function we will decide it when the function should execute 
+//timeout means after how much time it should execute in milliseconds
+
+//callbacks
+a callback is a function  passed as an argument to another function
+
+//callback hell
+callback hell:nested callbacks stacked below one another forming a pyramid structure (pyramid of doom)
+//this callbackhell is some kind  of disadvantage  and it is complex so we use promises
+
+//promises
+it is same like amazon assure that it will deliver the product means we call it as resolve promise is resolved and sometimes the order might cancel then we call it as promise is rejected
+promise is for eventual completion of task.it is an object in js
+it is solution to callback hell.
+
+let promise =new Promise((resolve,reject)=>{....}) //function with 2 handlers
+**resolve &reject are callbacks provided by js 
+//promise total three states pending,resolved(fullfilled),rejected state
+
+in functions also you can return promises (value) and also can keep track like whether it is resolved or rejected or fullfilled 
+and you can also add settimeout to make the value to access when we want it like after 5secs like that 
+then if you access the promise before the value is printed (before the settiemout) the promsie is in pending state if you access the value after the settimeout the it should be in resolved state then make sure to add resolve("success")
+
+//a javascipt promise object can be 
+ > pending:the result is Undefined
+ > resolved:the result is a value      resolve(result)
+ > rejected: the result is an error object   reject(error)
+
+
+//there promises are used byus like resolving rejecting how to make someone to use these promises
+.then() & .catch()
+
+promise.then((result)=>{}) //it is performing some task  after promise is resolved  
+promise.catch((result)=>{}) //it will some task after the promise is rejected 
+
+//promise chain
+//asynchronous function as we are using setTimeout() function 
+//we use chaining because when we want the second action to be done after completion of entire first action like after entering username checking it then enter the password
+if there is no chaining both will takes place at the same time 
+
+//for chaining  actually when do you compelte the first fucntion action that it is in then after printing the result so for making
+the second action to be after first insert it after the first in promise.then();
+
+//same task using callBacks and also using promises and also same work using async await 
+
+async await >> promise chain >> callback hell
+
+async function always returns a promise 
+async function myFunc()=>{ .... }
+/await pauses the execution of its surroundings system async function until the promise is settled 
+//means until the promise is resolved await() stops the execution
+
+//await keyword is used only inside async function
+//async-await() is used to do same task like those callback hell adn promises task of after first task compleitng full then the sencond task starts
+
+async await is wasy to understand but disadvantage si that we have to call that async fucntion call seperatley so we use IIFE
+
+//IIFE immediately involed function experssion 
+iife is a fucntion that is called immediately as soon as it is defined 
+
+(function)(); //iife 
+
+
+
+//FETCH API-application programming interface
+//like in resstaurant we order which is like request they prepare and giev us the items the preparation in thekitchen it was like api like the interface
+
+
+the fetch API provides an interface for fetching(sending/receiving) resources
+it uses Request and Response objects
+when request is sent it sends us the data
+the fetch() method is used to fetch a resource(data)
+
+let promise=fetch(url,[options]);
+
+//understanding terms 
+//data format 
+AJAX is Asynchronous JS & XML
+JSON is JavaScript Object Notation (AJAJ) it is asynchronous js * json 
+
+//when request is sent the api returns the response in JSON format then we convert it into js object (this conversion using json() method)
+
+json() method : returns a second promise (first is returned by fetch() method) that resolves with the result of praising the response body text as JSON. (input is JSON output is JS object)
+
+//request and response
+HTTP verbs-(hypertext transfer protocol(like rules while sending requests))
+Response Status Code 
+*HTTP response headers also contain details about the responses such as content type,HTTP status code 
+status:200 everything is okay  more than that means some error occured 
+headers :contains some extra data comes along with response or send with request 
+
+//task
+//sending POST request
+
+
+//if you invoke the functions and variables before intialising if you initialise them later not like other languages it willnt give error it will give the output only if you define the functions and variabels(it will give undefined ) ,and  if you didnt define them after then it will give error(not defined)
+// the above is occuring because even before executing the code the space is allocated for all  (that is execution context)  so even you invoke the fucntion before initialising without paranthesis it will give the total element 
+//the above things valid only if the fucntion is not written as arrow functions  because in arrow fucntions the function acts as a variable 
+//hosting is that above three actions 
+
+//global exceution context is created before execution and memory and code parts are allocated for eahc program before execution variables and the fucntions are allocated space and the  exceeution starts then the the variabels values re replace 
+//and for every fucntion seperate global execuiton context is created
+//the globalexecution fucntin of the overall code and the global execution contetx of the fucntions all are pushed into the call stack 
+//after execution of the function the global execution context is poppedd from the call stack 
+
+//along with the globla execution context global object is created that is window object 
+//any variables outside the fucntion is called as globla space 
+

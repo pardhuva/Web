@@ -1,0 +1,32 @@
+
+//notes application 
+NotesProject
+
+1. first create a react folder 
+   npm create vite@latest
+2. for using tailwindcss go to tailwind css 
+  npm install tailwindcss @tailwindcss/vite
+3. change the  vite.config.js 
+4. import tailwindcss to index.css 
+
+here when we add the forma with button now we add submit handler so whenver we click on submit it reloads paeg everytime 
+so we add e.preventDefault()
+  so for this we have to send the argument so change the normal structure 
+  now after arranging the ui 
+now you have to store the input data so we use useState 
+
+so first for title => use SetTitle so when submitted it should be set to '' and that first title input value={title}
+
+active- means when button is clickedh
+h-screen -> means full 
+lg -> means when large screen 
+leading-> line height  
+    tight -> smaller line height than normal 
+
+so now you have to create a task array that contians all the title,detials objects 
+ you have to map this tasks to the recent notes boxes 
+ //now delete button 
+
+ so for pointer cursor-pointer 
+  active-scale-95 so when clicked then teh button size decreases 
+  now onClick 

@@ -1,0 +1,96 @@
+
+//React is an open-source javascript library for building user interfaces.
+ focuses on creating reusable, component based UIs 
+ uses declarative programming - where you describe the ui and react figures out like when state changes it happens (it takes the which route to take )
+ efficiently updates the DOM using a virtual representation (Virtual DOM) 
+   virtual dom is the inmemory lightweight copy of browser dom 
+      so its like when a change occurs it will check with the brwoser dom ( this comparing is called reconcilation) 
+      so it updates only the changes to the real dom, so that is why react is faster  
+      ex: is you like an reel then the react changes only the like part remaining remains same 
+ 
+//why React ?
+   // simplifies complex UI with a componetn based structure 
+   // improves performance using the virtual Dom 
+   // encourages code reusability and vast ecosystem 
+   // has a strong community and vast ecosystem 
+   // supports modern features like hooks for state and lifecycle management 
+
+//Real world usage of react 
+ // facebook , instagram ,whatsapp, netflix 
+ // used for single-page applications (SPAs) - reloads single page 
+ // also used with react native for mobile apps 
+
+
+//understanding components 
+ components are the building blocks of a React application 
+ They are reusable, moodular , and maintainable pieces of UI 
+
+ Two main types :
+   1. Functional components - simple javascript  components (.jsx), 
+   2. class components  - uses ES6 classes , outdated, 
+
+ each component can manage its own state and props (properties)
+ props - inputs(data) passed from one component to another (arguments)
+ state - memory (that can be changed ) (functions)
+
+  //different types of components 
+   Layout components - header, footer, sidebar, navbar      (main structure)
+   UI components - button ,card, alert , modal              (reusable components )
+   data components - productlist, userprofile , orderdetails   (that are used using props )
+   form components - loginform , searchbox, feedback           (handles user  input and events)
+   utility components - loader, errorboundary , themeswitch    ( manage app logic and state)
+   page components - homepage, aboutpage, cartpage             ( combine  smaller components to a full screen )
+
+
+// React component hierarchy 
+  App component 
+   -> Header component 
+   -> Footer component 
+   -> Main component 
+       -> ProductList component 
+            -> productitem component
+            -> productitem component 
+       -> sidebar component 
+
+
+//JSX (Javascript XML)
+  // jsx stands for javascript XML 
+  ex: const element = <h1> Hello, React </h1>
+    it lets us write html tags which then react compiles that jsx into a standard javascript  using a babel under hood 
+
+ // jsx  allows you you to write HTML-like syntax inside javascript (html embedded with js)
+     function welcome() {
+         return <h2> Welcome to reatc </h1>
+     }
+     this return one is jsx not html that react will render into the dom 
+   
+  // supports javascript expressions using curly braces {} (dynamic js embeddings )
+      ex: return <h3> Hello, {name} </h3>
+  
+  // jsx makes ui code more readable and expressive 
+  // enables embedding dynamic content directly in the markup 
+    ex: return <h2> {isloggedin ? "welcome back" : "please sign in"} </h2>
+  // Attributes use camelCase ex:  onClick, className 
+      <button onClick ={handleClick}> Click me </button>     // in jsx 
+
+  // JSX is compiled into React.createElement() calls behind the scenes 
+      ex: //jsx 
+       const element = <h1> Hello, JSX </h1>
+        //compiled javascript 
+       const element = React.createElement('h1',null, 'Hello,JSX')
+  
+   so jsx looks like html but react doesnt understand html babel helps converting to jsx into js 
+   
+  // must return one element per component 
+     return (
+        <>
+        </>
+     )
+  
+
+// doubts session 
+ class components decreased over time because there you have to use className and specify those which takes memory  and all 
+  and also functional components can be maintained in another component and it requires less code which makes it readable so functional components are more readable 
+
+
+

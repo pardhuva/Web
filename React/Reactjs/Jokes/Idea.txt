@@ -1,0 +1,15 @@
+/**
+ *  challenge create a page that displays your favourite jokes 
+ * - create a joke component in its own file 
+ * - import and render  4-5 <Joke/> components 
+   - Each joke should receive a "setup" prop and a "punchline" prop 
+     and render those however you'd like 
+   - Use your favourite 2-part jokes (setup & punchline) or check jokes.md file for some examples 
+
+   Extra Credit :
+    some jokes are only a punchline with no setup 
+
+    e.g> its hard to explain a puns to kleptomaniacs because they always take thig=ngs literally.'
+
+    if you dont pass in  a 'question' prop ,how might you make it only show the punchline ?
+ */

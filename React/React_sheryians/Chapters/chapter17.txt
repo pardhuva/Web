@@ -1,0 +1,56 @@
+//Context API
+
+  //props drilling -> passing of props from parents ot children 
+
+  so suppose 
+   main 
+      App 
+        Navbar 
+           Sidebar 
+              userprofile 
+                   username 
+  in this fashion data flows from top to bottom 
+  but from bottom the data cannot pass 
+
+if you check the contextAPI  folder there app and navbar 
+   App 
+      Navbar 
+         Sidebar 
+ here data passes from App to Navbar and then Navbar to Sidebar 
+ you cannot direclty pass from App to Sidebar 
+
+
+//in small applciation it is easy to pass in a certain line way app to nav then to side 
+ but in big applications it is difficult that is where we need data centralization 
+ means all can access 
+
+ex: suppose i was sharing my netflix account to jk and jk is passing the account to v now 
+    if i change the password then i have to tell to jk and jk has to tell to v 
+    instead of this we maintain a dashboard 
+    dashboard so there if there is change in password it will be visible there and then all the users can check from there 
+    that is data centralization 
+
+if we use contextAPI then there will be data centralization 
+ means every  component can access even after any change 
+
+//needed to understand contextAPI 
+1. context  -> creating context
+2. provider -> providing this context to everyone 
+3. useContext -> make them use useContext 
+
+
+now check the code 
+
+contextAPI2 
+ instead of passing you centralize that is you wrap it 
+ after creating ThemeContext you wrap it around App so it can be accesses everywhere 
+
+ if you wrap then the whole App component is not displaying only ThemeContext is getting displayed 
+  so here ThemeContext is parent of App  so go to ThemeContext and print {props.children}
+
+  so now create context -> createContext()
+     provide data       
+     use the data 
+ after creating context export -> so export that context 
+ suppose -> export const ThemeDataContext = createContext()
+ now providing -> <ThemeDataContext.Provider> </ThemeDataContext.Provider>

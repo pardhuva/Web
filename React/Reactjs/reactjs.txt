@@ -1,0 +1,365 @@
+//Traditional Frontend Stack:
+In normal frontend development, we use:
+
+    HTML – for structure
+    CSS – for styling
+    JavaScript (JS) – for interactivity and dynamic behavior
+
+You write HTML directly, then use JS to manipulate it.
+
+⚛️ React Frontend Stack:
+In React, you use:
+
+    JSX (JavaScript + XML) – instead of plain HTML
+    (It looks like HTML, but it's written inside JavaScript)
+    CSS – still used for styling (or frameworks like Tailwind, etc.)
+    React (JavaScript library) – to manage the logic and UI components
+
+React doesn’t "remove" HTML — it generates HTML dynamically using JavaScript.
+
+You're not replacing HTML, you're generating HTML dynamically using JavaScript (React).
+You're still using HTML, CSS, and JS — but in a more modular and efficient way.
+
+
+
+
+//section1 - static pages         project- ReactFacts site 
+//section2 - Data-Driven React    project - Travel journal 
+//section3 - React State          project - chef claude 
+//section4 - Side effects         project - meme Generator
+//Capstone Porject1  - Tenzies game 
+//Capstone projetc2  - Assembly:Endgame
+
+
+//section1 - static pages 
+
+//normally something you write like a heading in html index.html  
+//now index.jsx   we store in .jsx files 
+
+//we call root because we render all our markups using react inside javascript files  we need one central locatoion to insert 
+so that is the place root is where we insert everything 
+
+//you have to create a package.json file so you have to enter the command npm init -y 
+//also your  folder should contain vite.config.js  so for this run this  npm create vite@latest . -- --template react   or manually create file 
+
+//so now after creating html file and linking the jsx file(react file) now to run the file use npm run dev command this automatically takes you to the browser 
+
+//first challenge -challenge1
+
+//local setup with vite
+to checkup whether node or npm is installed or not node -v and npm -v 
+npm create vite@latest to create a react project 
+
+//libraries/framework 
+libraries is the collection of reusable code 
+it reduces need to write repetitive/complex things from scratch
+you can control how/when its used. no/few boundaries
+
+/framework is predetermined architecture - you follow a specified pattern of development 
+you work within the boundaries set by the framework 
+"right" and "wrong" ways to use it
+
+/react is seen as library for web and native user interfaces  and nextjs is a stack framework that uses react as its ui library 
+Even though React is technically a library, it's commonly referred to as a framework due to its ecosystem and usage.
+why choose react 
+ * highest job demand  
+ * largest ecosystem/community
+ * less magic 
+ * composable/declarative 
+ * active development
+//this means you can also use html,css,js for user interfaces in web applications but why reactjs is due to above reusable and all 
+its like using html is like building house by hand brick by brick whereas using reactjs is like by using tools to build faster 
+
+//react.createElement() function contains three parameters  first import this function 
+1. what type of element 
+2. props 
+3. data what above element will have
+//if there are multiple root renderings from the root only the last call will be visible on screen because it replaces the previous content in DOM 
+//vanilla technologies means pure html,css,js without any frameworks or libraries like react,angular,bootsrap.....
+
+/composable 
+react is compasable example you had a navbar then you can make it into compponent and can be used by rendering the component(importing)
+/challenge2 - challenge2.jsx   ( <Componentname/> )
+
+/declarative 
+can lean on library to handle the manual tasks 
+declarative - "what should be done"? 
+imperative  - "how should it be done"?
+
+//challenge-3 - challenge3.jsx there you see the declarative way is easier in which we use react compared to imperative where we have to define each and every step 
+
+Porject - ReactFacts - Porject1
+i cannot render multiple  elements in one render method 
+//for rendering more than one element you have to use div/section/manipulate
+
+//reactfacts prject -markup 
+p1_markup.jsx
+
+//pop quiz - quiz1.jsx
+
+//custom components - custom_components.jsx
+//before we saw components where we put code inside our own custom components
+//functionname starts with capital letter and also fucntion name is encapsulated inside the tag 
+
+ //challenge-4 challenge4.jsx
+
+ //pop quiz2 -quiz2.jsx
+
+ //fragments - fragment.jsx
+ to compose the components together 
+ //actually without using framents if we use div to compose the componetns then
+   actaully it creates another div inside div whose header is root so its like 
+    <div class = "root">
+      <div>
+         //here the whole header ,main,footer all come together
+         </div>
+     </div> 
+  but if you use fragments then it will not create another div inside it directly inserts the components inside the parent root div 
+  we import the fragment library from react library 
+
+
+//Custom components Parent/child components 
+challenge5-challenge5.jsx
+
+//now connecting css to these 
+
+//Organizing Components 
+actually before we created custom components but now we create files for each component for extra scalable 
+as we created seperatefiles we have to export them for exporting simply
+ we can use "export default" before fucntion to export to every function 
+see Header.jsx which contians Header component 
+so its better to store all the components in Components named folder 
+
+
+//initial project setup 
+First_Project.jsx
+// if you dont have package.json then to run the project you have to enter   "npx vite"
+//for installing package.json    "npm init"
+//after that you have to add   "dev : vite " inside scripts section in package.json
+//now you can run  "npm run dev" to ge to teh website 
+//dont forget to create an vite.config.js 
+
+
+//challenge6.jsx
+//not like usual we link the css files to the html files 
+//here we import the css files in that respective component jsx file
+//there in css files for that respective component use unique classname or ids 
+//if you use universal selctors (like *, body, or element selectors like h1, p, etc.)  
+   then css will be applied globally to all the components so use unique classnames or ids  
+
+
+//summary
+1. why you should care about React 
+2. settting up a new React project 
+3. JSX
+4. Custom components 
+5. styling 
+
+
+//section-2
+we'll learn 
+1. why reusability is important 
+2. props 
+3. creating components from an array of data 
+
+Data-driven react 
+
+//travel journal project  - Travel_journal
+//check header.jsx in this folder 
+//now check fo rthe Entry.jsx
+
+//problem - not reusable 
+here the data is hardcoded we want the data to be reusable 
+
+//props 
+//as we use functions for reuse we have to cosider that  
+//inyoutube you can see we use video tile componetns so we upload any new video it will automatically add in the basic format 
+
+//so props is the way we can make our component more usable 
+//props.jsx
+
+//challenge7.jsx
+
+//creating a props component in the using props challenge8.jsx
+//so writing props in reactjs is a key function when you have multiple objects of same type 
+
+//prop_quiz.jsx 
+
+//destructing props 
+check Contact.jsx
+
+//props practice 
+Jokes folder 
+//here first you have to create an index.html file and then link the index.jsx file to it where you render from root 
+inside the index.jsx you import App you write the syntax to print on the screen and for them you can use components using props 
+//for particular port you can use .env file and vite.config.js file 
+//you have to install the package.json and inside "dev":"vite"
+
+
+//no string props 
+App.jsx in the above folder 
+//for string datatype you can send directly the  string but 
+//for other datatypes you have to send in curly braces 
+
+//import static assets 
+//static_assets.jsx
+
+//Review - array.map()
+challenge10.jsx
+
+//react can render arrays 
+//jsx is an object 
+render.jsx
+
+//mapping components 
+mapping.jsx
+
+//map quiz 
+mapquiz.jsx
+
+//travel hournal: map entry components 
+//data.js
+//key prop when dealing with removing the old or uploading something new 
+//so thats why we maintian id 's in the data and key element inside the entry 
+//we give the id to key or else it will print the entry which is already deleted so we use key which points to id 
+//for unqiueness you send the index inside the parathsis for map method 
+
+//pass object as prop inside the travel journal 
+
+//section 2 overview 
+what we learned 
+1. why reusabilty is important 
+2. props 
+3. creating components from an array of data 
+
+
+
+//section 3 
+interactive web apps in react 
+so far we learned static webpages  now we will learn dynamic web apps 
+static web pages 1. read only no user driven changes to data 
+2. ex: blogs,news sites, recipes ,
+dynamic web apps  => read-write user has ability to change data 
+2. highly interactive 3. displays your data 
+eg: bank website (where you can transfer) ,airbnb ,ecommerce sites 
+
+
+//chef_Claude project 
+//props vs state 
+//props refres to the properties being passed into a component in order for it to wrok correctly,similar to how a fucntion recives parameters: "from above." 
+A component receving props is not allowed to modify those props. (I.e. they are immutable)
+//state refers to values that are managed by the component, similar to variables declared inside a function. any time you have changing values that shoudl be saved/displayed 
+you'll likely be using state
+
+"view as a fucntion of state 
+
+1. Render : react runs your  function and displays whatever gets returned. the function will only be run agagin if (1) it receives new props from above or (2) its internal state values change 
+2. setState: changing a local,non-state to re-render the component.changing state with a built-in 'setState' function does.
+3. view = function(state) thus,when state changes and re-runs(re-renders) your component new gets returned and replaces what used to be on teh page 
+
+//anytime you want to change the state use state setter function 
+
+view as a function of state lightswitch/bulb analogy 
+state.jsx   //useState()
+//const arr = [1, 2];
+const first = arr[0];
+const second = arr[1];
+
+//array destructring 
+const [first, second] = [1, 2];
+
+//state_practice.jsx
+
+//updating state with a callback function 
+update.jsx
+
+//changing state quiz 
+state_quiz.jsx
+
+//ternary operator 
+ternary.jsx
+
+//toggling state 
+toggling.jsx
+
+//complex state :arrays 
+arrays.jsx
+check chef_claude arrys onsubmit and onchange 
+
+//complex state -objects 
+objects.jsx
+
+//forms.jsx 
+//form action is used so where the browser should point to after submitting the form 
+
+//conditional rendering (&&)
+//rendering the pages based on the conditions 
+conditional.jsx
+
+//conditional rendering practice 
+//c_practice.jsx
+//cinditional ternary 
+
+//conditional renering practice
+//c_r_practice.jsx
+
+//conditional rendering quiz
+c_r_quiz.md
+
+//passing state as props 
+p_s_p.jsx
+
+//passing data to components 
+
+//sound pads 
+sounds folder
+
+// chef_claude 
+//what we learned 
+1. Event Listeners 
+2. State 
+3. Conditional rendering 
+4. Forms 
+5. State management strategies 
+
+
+
+//section4 
+//handling side effects in React 
+1. Controlled components (forms)
+2. functional programming in React 
+3. Fetching data 
+4. Side effects 
+
+
+//Meme_Generator folder 
+//meme generator fetching data 
+//fucntional programming in react 
+   main principles 
+   1. Pure functions- it will always give the same output the given same inputs 
+   2. immutability -when we use props in some function then we should not change the props inside the function which makes it mutable 
+   3. Avoiding side effects 
+   
+//fetching data 
+for fetching 1. GET the data 
+             2. Save teh data in state 
+//fetching.jsx
+
+//useEffect()
+useEffect(setup , dependencies)
+useeffect.jsx
+// useeffect is a hook that lest you perform in sideeffects in fucntional components 
+//sideeffect are fetching data ,setting up subsrciptions , manually changing the dorm, timers and more 
+
+
+//windowTracker folder
+
+//useRef 
+refs are similar to state, expect:
+ 1. you can mutate them directly 
+ 2. changing them doesnt cause a re-render 
+they're commonly used for accessing DOM nodes without needing to assign ids to elements 
+
+
+//capstone project 1
+Tenzies 

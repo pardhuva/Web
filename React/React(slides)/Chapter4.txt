@@ -1,0 +1,96 @@
+
+// Prop drilling and component communication 
+// moduel 2 of state and props 
+
+What is prop drilling ?
+ Prop Drilling( The Hidden problem in React)
+
+ it is process where you pass data  from parent to child with different intermediary layers(components) , the intermediate components might or might not use the props 
+ . Passing data throught multiple nested components 
+ . Intermediaries forward props they dont use 
+ . Leads to cluttered, hard-to -maintain code 
+ parent -> child -> grandchild 
+
+ (so simply even though the intermediate components  dont use the props they should pass it to the children which makes the code hard-to-maintainable) 
+ prop Drilling example :
+   App -> Dashboard -> UseCard -> username 
+
+//propDrilling1
+//propDrilling2
+
+//solutions to prop drilling 
+. React Context API 
+. State Management Libraries (Redux, Zustand)
+. Custom Hooks 
+
+// demo1 
+ prop drilling example to show dashboard, usercard, username , intermediary components 
+   check these components in the practice folder above 
+
+// what is Component Communication ?
+  the Exchange of data between components 
+  as  react is component based architecture which is build with small components , these components are required to have communication between them 
+  that process is called  component communication , 
+  as we know props  are the way through which they exchnage the data  
+
+// why components  need to communicate ?
+  . Components are modular and reusable 
+    ex: header component 
+  . Real apps share data (user info, theme, cart) 
+     so in real apps components need to share data like theme, user info , communicate with each other for the whole functional web page
+     so here these cart ,theme these are stored in parent so they can eb passed for many components that can be used in many components pages 
+    
+    parent <--> child data flow ensures consistency 
+
+    parent -> child via props 
+    child -> parent via callback functions 
+
+    ex: //ComponentCommunication.jsx 
+
+// why it matters 
+ . promotes separation of concerns - each component focuses on one task 
+ . encourages reusability - same component can display different data 
+ . maintains consistency - one source of truth (state) across the app 
+ . enables scalability - easier to extend features without breaking others 
+ 
+
+// Types of  communication 
+  //communication.png 
+
+ / Parent -> child communication 
+   pass props from parent to child 
+    like in the above componentcommunication Header is that type 
+     //ParentToChild 
+ 
+ / Child -> parent communication 
+    use  callback props (so when the child want to send some data to the parent )
+  . parent defines function and passes it down 
+  . child calls it to send data back 
+
+   //ChildToParent 
+   Parent -> defines function and passes ti as a prop to the children so the child component triggers that prop function (callback)
+   then the parent function executes -> updates state / logs/alerts 
+   
+    //child doesnt change the state of the parent directly it sends  via callback to update it by itself 
+ 
+ / sibling -> sibling  communication 
+   when one sibling wants to share with another sibling but we have only parent <--> child 
+   method is lifting state up mechanism to undergo this communication  
+   it uses shared parent state ( so parent holds the state of both children)
+    
+// Global Communication 
+   used to share data globally across the component 
+   ex: language, authentication 
+   uses createContext, Provider, useContext 
+   contextAPI = global data store 
+   so  creates a global context so no need to share from parent with intermediate components eliminates prop drilling 
+
+   ex: like wifi so anyone who connects to wifi cna use direclty 
+
+
+// best pratices 
+  . use props for local communication 
+  . avoid deep prop chains 
+  . use Context API for global data 
+  . keep components small and focused 
+

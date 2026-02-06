@@ -1,0 +1,37 @@
+
+In-memory :
+   means data is stored directly inside RAM (system memory)
+   very fast access 
+   data exists only while the applciation is running 
+   once the server stops -> data is lost 
+
+Local Memory/ Local Storage :
+   thsi is usually referring to browser localStorage or sessionStorage (web apps)
+   stored inside browser, but on disk NOT ram 
+   persists even after restarting the browser or sytem(localStorage)
+   not dependent on backend program emory 
+   slower than RAM, but persistent 
+
+Browser Memory :
+   this can mean multiple types of memory used by a browser 
+   A. Javascript runtime memory (In-browser RAM)
+      . variables stored usign js execution
+      . lives in the brwsers RAM 
+      . lost when page reloads 
+   B. Storage APIs(Persistent)
+      . LocalStorage 
+      . SessionStorage 
+      . Cookies 
+
+
+| Category                   | Examples                          |
+| -------------------------- | --------------------------------- |
+| **Primary (volatile)**     | CPU registers, cache, RAM, VRAM   |
+| **Secondary (persistent)** | SSD, HDD, flash                   |
+| **Browser (persistent)**   | LocalStorage, IndexedDB, Cookies  |
+| **Browser (temporary)**    | JavaScript runtime memory         |
+| **App memory**             | heap, stack, global/static        |
+| **Distributed/HPC memory** | shared memory, distributed memory |
+| **Mobile memory**          | RAM, internal storage, cache      |
+
+

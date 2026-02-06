@@ -1,0 +1,6 @@
+print("hello world")
+print("pardhuva")
+print("hello","i am pardhuva")
+print(23)
+print(23+10)
+print("23+10")

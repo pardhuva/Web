@@ -1,0 +1,31 @@
+//Gallery project 
+ simply api calls with axios 
+
+ // so when a user logins then his username and password is sent to the backend 
+   of they are valid then the backend sends the access token and refresh token to the frontend 
+   the access token is stored in memory whereas the refresh token is stored in cookie 
+
+   so these two are sent to the frontend and  now so whenever you send a request to hte backend then for every api call the access token is attached in the header with the request 
+    so if it is valid only then the requst is processesed 
+     but the access token lifetime is short nearly 15min then it expires 
+     but whereas refresh token lifetime is long until you logout or like 7days 
+
+     so whenever the access token expires then refresh token creates a new access token 
+
+   you can aks like they why to create a access token cant you direclty usse refrehs token because 
+    if a attacker stoles the refresh token he cna misuse your account till long so refersh token simply jsut exists
+    so even if the attacker steals the access token he can only use it for 15 mins 
+
+
+//so first we get the objects from the api and then using state you print them after clicking the button with the help of map 
+  and then you use useEffect where you put entire getData into that useEffect so you re-render whole page based on dependencies 
+   and then you added the prev and next button so based on that indices the page re-renders so we use index as the dependency 
+
+//now try to componetnise them 
+
+//infinite scrolling 
+ so in youtube there is no end when you keep on going on youtube there will be no end it will give youo some video suggestions 
+ so keep on scrolling it will reload and give me some videos 
+
+ but in our project when we click those pages appears but we want like when you reload then those pages appears 
+ so for this scrolling based api call  so when you scroll then the scroller value changes then call for api 

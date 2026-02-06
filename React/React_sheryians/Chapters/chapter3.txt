@@ -1,0 +1,31 @@
+
+Components ??
+ so whole website can be made as component based architecture so 
+ 
+ so if you take instagram all the features all are seperate components and also 
+ for everyone the features and all are same only jsut the data is different that is when props deal with 
+
+ ** from parent you can send data to child but the reverse is not allowed 
+
+ //props 
+ it is object which contains key-value pairs 
+ so you can use it for the same component for multiple data 
+
+//relative paths 
+
+ | Relative Path          | Meaning / Use Case                         | Example (Current folder = `/home/user/scripts/`)           |
+| ---------------------- | ------------------------------------------ | ---------------------------------------------------------- |
+| `.`                    | Current folder                             | `.` → `/home/user/scripts/`                                |
+| `./file`               | File in current folder                     | `./run.sh` → `/home/user/scripts/run.sh`                   |
+| `./folder/file`        | File inside a folder within current folder | `./utils/helper.py` → `/home/user/scripts/utils/helper.py` |
+| `../`                  | Parent folder (one level up)               | `../` → `/home/user/`                                      |
+| `../folder/file`       | File inside a folder in parent folder      | `../pics/pic1.jpg` → `/home/user/pics/pic1.jpg`            |
+| `../../folder/file`    | File inside a folder two levels up         | `../../user2/file.txt` → `/home/user2/file.txt`            |
+| `../../../folder/file` | File inside a folder three levels up       | `../../../other/file.txt` → `/home/other/file.txt`         |
+
+
+// even for each component you can explicitly can have css file 
+ like seperate header.css file, footer.css file etc....
+
+ //feature based vs atomic design structure 
+ 

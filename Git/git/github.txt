@@ -1,0 +1,158 @@
+
+//Git 
+version control system is a tools that helps to track changes in code 
+
+Git is a Version  Control System. it is 
+popular, free and open source , fast and scalable 
+
+1 . track the history 
+2 . colloborate 
+
+//Github 
+
+website that allows developers to store and manage their code using Git.
+
+two-step process fro a repository 
+ 1. Add 
+ 2. commit
+
+ //setting up Git 
+ //download Git Bash for windows 
+
+ //verify whether git is present or not 
+ git --version 
+
+//configuring Git - telling from which account we are doing the changes to git from github 
+//global level and local level 
+// ~ - root directory or main directory (directory means folder )
+
+git config --global user.name "My Name"
+git config -- global user.email"someone@email.com"
+git config --list
+
+//clone - Cloning a repository on our local machine   (local means our laptop/pc whereas remote means from github which includes from others account  )
+        git clone <- some link ->
+//status - displays teh state of the code 
+        git status 
+
+//after cloning change the directory (cd  repo name)
+
+//for listing files -ls for listing hidden files ls -Force (for powershell) ls -a (for linux)
+
+//untrackeed  - new files that git doesnt yet  track 
+//modified - changed 
+// staged - file is ready to be committed 
+//unmodified - unchanged 
+
+for solving untracked / modifed  bugs  ==>  we do add (staged)  ==> commit (unchanged)
+
+//Add & commit 
+add - adds new or changed in your working directory to the Git staging area 
+      git add <-- file name -->
+
+commit - it is the record of change 
+       git commit -m "some message"
+
+//for adding multiple files => (git add .)
+//after add ==>  commit ==> push 
+
+//push - upload local repo content to remote repo 
+        git push origin main      (main is the branch and the origin is the default remote repo path )
+
+
+//init command 
+init - used to create a new git repo 
+   git init 
+   git remote add origin  <-- link-->      (to create the newly created repo as origin )
+   git remote -v                           (to verify remote )
+   git branch                              ( to check branch)
+   git branch -M main                       ( to rename  branch)
+   git push -u origin main --force 
+
+//branch 
+/**
+You’re writing a book on your computer. Right now, you have one file with one version of your story — let’s call this the main version (like the main branch in Git).
+Now, you want to try writing a new chapter, but you're not sure if it will be good. You don’t want to mess up the original story.
+So what do you do?
+You make a copy of the book and start writing the new chapter in that copy.
+➡️ That copy is like a branch in Git.
+You're working separately without changing the original.
+/
+
+//adding files from vscode to github       
+  add  ==>  commit  ==>  push
+
+//doing changes for repo in github
+  clone ==> do changes ==>  add  ==>  commit  ==>  push
+
+//from creating a folder in vscode and push the folder into the github
+1. create a folder 
+2. git init this create a git file 
+3. create all required files
+4. git add .
+5. git commit -m "message"  //after this you cannot push because there is no repository 
+6. create a repo name it as above folder 
+7. git remote origin main  <-- link -->
+8. git remote -v
+9. git branch 
+10. if not main then  change it (git remove -M main)
+11 . now you push     git push -u origin main --force 
+
+
+
+//workflow 
+Local Git 
+
+Git Branches 
+Branch commands 
+ 
+ git branch      ( to check branch)
+ git branch -M main ( to rename branch )
+ git checkout  <--branchname --> ( to move from one branch to another )
+ git checkout -b <-- new branch name -->   ( to create new branch)
+ git branch -d   <-- branch name -->     ( to delete branch)
+
+ here after doing changes in another branch and then add ==> commit ==> push  (git push origin branchname ) this creates another branch 
+ now you merge thosee branches this updates code in github in main branch which you merged with the branch you created 
+ now for update of code in vscode in main branch code we do pull command so switch to main branch and enter pull command 
+
+
+ //pull command 
+ git pull origin main 
+ used to fetch and download content from a remote repo ans immediately update the local repo to match that content 
+
+
+ //resolving merge conflicts 
+ an event that takes place when git is unable to automatically resolve differences in code between two commits 
+
+suppose you did some changes in main branch and then then you swithed to other and did some changes on the same text now if you merge those both branches 
+git merge branchname 
+now you would get error(conflict ) as you were trying to chnage the same 
+
+
+//undoing changes 
+
+case 1 : staged changes  ( if you added but not committed then for undo below )
+         git reset   <--file name -->
+         git reset
+
+case 2 : committed changes (if already both added and commited if you want 1 undo for one commit)
+         git reset HEAD ~ 1
+
+case 3 : commited changes  ( for many commits if you want to undo many )
+
+        git reset < -- commit hash -->       //for hash go to git log there will be hash for each commit paste the hash to which commit you want to undo 
+        git reset -- hard  <--commit hash -->
+
+
+//got checking all the commits     git log 
+
+
+//Fork 
+a fork is a new reposiotry that shares code and visibility and settings with the original upstream repository 
+fork is a rough copy 
+ 
+so like when you want someone repo copy to be in your account then instead of cloning entire and again creating a repo in your github you can just fork the repo of that someone then this will create a copy of that repo in your account 
+you can even do the changes and then do commit changes 
+for mergin with teh origin writer you can create a new pull request  on master branch 
+

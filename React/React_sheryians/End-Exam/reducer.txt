@@ -1,0 +1,167 @@
+
+reducer is a function of form 
+   function reducer(state, action) {
+    // decide new state based on action
+    return newState;
+   }
+   state → current value (like "light")
+   action → an object saying what you want to do
+
+
+  ex: function counterReducer(state, action) {
+        switch (action.type) {
+            case "INCREMENT":
+            return state + 1;
+            case "DECREMENT":
+            return state - 1;
+            default:
+            return state;
+        }
+        }
+   
+   If current state = 0:
+    counterReducer(0, { type: "INCREMENT" }) → returns 1
+    counterReducer(1, { type: "DECREMENT" }) → returns 0
+
+  Input: current state + action
+👉 Output: new state
+
+
+what is useReducer ?
+  useReducer is just a React hook that uses this same reducer idea instead of useState.
+
+   const [state, dispatch] = useReducer(counterReducer, 0);
+   state → current value (like count)
+   dispatch → a function that you call with an action
+
+   ex: dispatch({ type: "INCREMENT" });
+
+   useState → you give it the next state directly (setCount(count + 1)).
+   useReducer → you give it an action, and the reducer decides the next state.
+
+
+
+//useEffect 
+ perfrom side effects (api calls,dom updates)
+
+   useEffect(() => {
+      async function fetchUser() {
+        try {
+            const response = await fetch("https://kfdsj.com")
+               
+            if(!response.ok){
+                throw new Error("Failed to fetch users");
+            }
+        }catch(err){
+            setError(err);
+        }
+      }
+   },[dependencies])
+
+
+//useReducer 
+ purpose : to handle complex state management 
+
+ const [state, dispatch] = useReducer(reducer,initialState);
+  state - the current state value;
+  dispatch - function used to dispatch actions that will update the state.
+  reducer -  function that defines how the state should change based on dispatched action 
+  initialState - initial state value 
+
+  ex:
+
+  //1. define reducer function 
+   function reducer(state, action) {
+       switch (action.type) {
+         case "increment":
+             return {count:state.count+1};
+         case "decrement":
+             return {count:state.count-1};
+         case "reset":
+             return {count:0};
+         default:
+          throw new Error("Unknown");
+       }
+   }
+
+   function Counter() {
+     //2. initialize state with useReducer 
+     const [state,dispatch] = useReducer(reducer,{count:0});
+
+     return (
+        <div>
+          <button onClick ={() => dispatch({type:"increment"})}>
+          <button onClick ={() => dispatch({type: "decrement"})}>
+        </div>
+     )
+   }
+
+ if just increment you can do it using useState but when usign multiple methods then use useReducer for complex , multiple tasks 
+
+//useContext : Access global data 
+//useMemo : optimize expensive calculations 
+//useCallback : optimize function references 
+//useRef : persist value across renders 
+
+//useContext 
+ purpose : allows functional components to access context values directly
+ syntax: const contextValue = useContext(MyContext);
+
+ 3 steps of useContext 
+  1. create the context 
+  2. provide the value using Context.Provider 
+  3. consume it with useContext(someContext)
+
+ ex: 
+  1. create context 
+    const ColorContext = createContext();
+  2. wrap our app with ColorContext.Provider 
+     function App() {
+        const [color, setColor] = useState("blue");
+
+        return (
+            <ColorContext.Provider value={{ color, setColor }}>
+            <div>
+                <h1>App Component</h1>
+                <Child />
+            </div>
+            </ColorContext.Provider>
+        );
+        }
+  3. Use useContext in nested components
+     // Child.js
+     //in this way using useContext you can use that color,setcolor in all its children 
+        function Child() {
+        const { color, setColor } = useContext(ColorContext);
+
+        return (
+            <div>
+            <h2 style={{ color }}>This text uses the current color!</h2>
+            <button onClick={() => setColor("red")}>Red</button>
+            <button onClick={() => setColor("green")}>Green</button>
+            <button onClick={() => setColor("purple")}>Purple</button>
+            </div>
+        );
+        }
+
+export default Child;
+
+
+export default App;
+
+ ex: 
+ import React,{createContext, useContext, useState} from "react"
+
+ const ThemeContext = createContext();
+ <ThemeContext.Provider> this is used to wrap all the App so all the childer can use that global value 
+
+ 
+
+
+
+useEffect(()=>{
+    fetch("https)
+     .then(res=>res.json());
+     .then(data=>setUsers(data));
+     
+})

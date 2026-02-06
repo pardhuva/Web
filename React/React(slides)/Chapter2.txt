@@ -1,0 +1,96 @@
+// React dom , 
+
+what is dom ?
+   the DOM (document object model) represents the structure of a web page 
+   every element in HTML is represented as a node in the DOM tree 
+    html 
+    -> body 
+      -> h1
+      -> p
+      -> button 
+  updating DOM directly is slow and costly 
+
+ so when there is change intially it used to re-render whole page again (both, css,js and  all) which takes time for larger websites 
+ so vitual dom comes , react adapts virtual dom 
+
+// what is the virtual dom  
+  virtual  dom is a lightweight ,in-memory copy of the actual dom (Real Dom - Browser DOM (internally maintained by browser to maintain the UI basically a data structure))
+   react keeps this virtual representaion to optimize UI updates
+   results in faster and more effient rendering 
+
+  Javascritp DOM - so when  you update something then it will update(re-render) whole page instead of the part that got updated 
+  Virtual DOM -  so it has a copy now after a update then it will compare with the actual DOM and updates only the changes instead of re-rendering the whole page 
+   this is fast 
+   so react uses this virtual DOM 
+  so when a update  occur then instead of directly updaing the real dom it only updates the virtual DOM (object), then uses smart algorithm  to find out the changes between the two doms  
+    
+demo - use some button when click it changes so state is getting changed so it re-renders where we use virtual dom 
+   to check go to elements in browser there you can see when clicked only that part changes remaining remains same 
+
+
+how virtual dom works ?
+  / React compares the new and hte old virtual dom trees to find changes (Diffing)
+  / only the changed parts of the real DOM are updated (Reconciliation)
+     Browser DOM <---> Virtual DOM 
+     old virtula dom is the actual real dom 
+  user Action -> state change -> new virtual dom -> diffing with old virtual Dom -> update Real dom 
+
+how React virtual Dom improves performance?
+  -> avoids full Dom repaints 
+  -> optimized rendering 
+  -> reduces javascript execution time 
+  -> intelligent rendering decisions 
+
+ real life use cases of virtual dom 
+  whatsapp, instagram, facebook, twitter 
+
+//Functional components 
+ functional components are javascript functions that return JSX. accepts props as inptu and return UI elements as output 
+ do not use this keyword (unlike class Components)
+ can use React Hooks (like useState, useEffect) to manage state and lifecycle 
+ used widely in single page applications(SPAs) and modular design 
+
+//how functional components work in react 
+  /props : receiving input 
+   parent component -> passes props -> child component 
+   
+   ex: //parent component 
+      function App() {
+         return <Greeting name="Rohan" />
+      }
+      //child  component 
+       function Greeting(props) {
+        return <h2> Hello {props.name} </h2>
+       }
+  / processing props 
+  / virtual DOM creation -  when component is rendered react creates an virtual DOM tree  representing the current state of the application 
+        new virtual DOM is created on the state change or component re-render 
+  /re-rendering 
+    old virtual DOM -> new virtual DOM -> highlighted change -> updated browser view 
+
+
+//advantages of functional components 
+ they are simplest and modern way to create Reatc components 
+ do not use this keyword (unlike class components)
+ support for Hooks enables powerful logic reuse 
+ promote cleaner, reusablem and testable code 
+ better performance with reacts optimization 
+ easier to read, maintain and debug 
+
+
+//Class components 
+  ES6 classes that extend React.Component 
+  use render() method to return JSX 
+  can access props via this.props 
+  can maintain internal state using this.state 
+  can use lifecycle methods like componentDidMount, componentDidUpdate, componentWillUnmount.
+  less preferred in modern React, replaced largely by Functional components with Hooks 
+  contains more boiler plate than functional components 
+
+//when to use Class components ?
+  maintaining older codebases 
+  using legacy libraries
+  needing lifecycle methods 
+  migration scenarios 
+  following OOP design patterns 
+  

@@ -1,0 +1,27 @@
+
+//useState hook 
+  if you do in the normal approach try to increment that will not update on the webpage because 
+  suppose you have incremented the a value in the fucntion then it will be only incremnted on teh local copy of that function it will nto change on the original global copy 
+  react doesnt know anything that it was changed because you didint change state or 
+   you ddidnt trigger to re-render the componet so it shows hte vold value 
+
+   react ui updates only when it re-renders, 
+   re-render happens only when state or props change 
+   changing a variable is invisible to react 
+
+   so use useState 
+    this will update the stored value and 
+    automatically re-rende rhte component 
+    draw the new value on screen 
+
+ //on usestate when you do change the function you invoke right there dont use argument 
+  ex: increment(count) 
+   you have access to the count throughout the function so dont use arguments seperately 
+
+   these setCount these will be executed asynchronously so if you have console.log() in that increment function that will be updated slowly compared to count because that setCount is asynchronous 
+
+in useState it can be anthing like array,objects,strings,number 
+ for arrays adn objects you do destructuring to modify the key-value pairs 
+
+setnewArray(prev=>([...prev,60])); -> batch updates 
+

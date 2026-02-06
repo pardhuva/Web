@@ -1,0 +1,16 @@
+
+//functions 
+
+like for on clicking the button 
+  if there is no custom arguments or run extra logic you should use arrayow function 
+  ex: 
+      <button onMouseOver={() => btnclicked("Mouse hovered!")}>
+  if you just want to call the function without arguemnts then direct function reference 
+   ex:  <button onClick={btnclicked}>Change user</button>  
+
+ | When to Use                                                  | Syntax                                 | Example                                             |
+| ------------------------------------------------------------ | -------------------------------------- | --------------------------------------------------- |
+| You just want to call the function with **no arguments**     | Direct function reference              | `onClick={btnclicked}`                              |
+| You need to pass **custom arguments** or run **extra logic** | Arrow function                         | `onClick={() => btnclicked('Hello')}`               |
+| You want the function to execute **only after event occurs** | Never use parentheses without wrapping | ✅ `onClick={btnclicked}` ❌ `onClick={btnclicked()}` |
+

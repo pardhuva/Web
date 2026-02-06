@@ -1,0 +1,10 @@
+*{
+  margin:0;
+}
+
+article{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+}

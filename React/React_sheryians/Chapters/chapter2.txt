@@ -1,0 +1,22 @@
+
+now react ??
+ vite is  tool like bundler to create folders 
+
+ first we create folder usign using 
+  npm create vite 
+  cd to the folder 
+  npm install 
+  npm run dev 
+
+as we know node modules helps in running the server 
+
+in App you cna enter rafce this gives you the boiler plate for app.jsx 
+
+inside use fragments for returning multiple elements 
+
+gitignore ??
+ The .gitignore file is used to tell Git which files or folders it should ignore — i.e., not track or push to the repository.
+ like node moduels and all no need to push 
+
+package.json??
+  contains dependencies and all 

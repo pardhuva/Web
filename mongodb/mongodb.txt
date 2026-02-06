@@ -1,0 +1,196 @@
+//mongodb is nosql database management system 
+nosql - not only structured query lanaguage 
+
+/*
+A NoSQL Database Management System (NoSQL DBMS) is a type of database that is designed to handle large volumes of unstructured, semi-structured, and structured data.
+ Unlike traditional relational databases (SQL-based DBMS), NoSQL databases do not rely on a fixed schema, making them more flexible and scalable for modern applications.*/
+
+Key Features of NoSQL DBMS:
+Schema-less Design – No predefined table structures; data can be stored in various formats.
+Horizontal Scalability – Can handle large amounts of data by distributing it across multiple servers.
+High Performance – Optimized for fast read and write operations.
+Flexible Data Models – Supports different formats like key-value, document, column-family, and graph.
+ACID vs. BASE – Most NoSQL databases follow BASE (Basically Available, Soft state, Eventually consistent) instead of the strict ACID (Atomicity, Consistency, Isolation, Durability) model of SQL databases.
+
+Types of NoSQL Databases:
+Key-Value Stores – Data is stored as key-value pairs (e.g., Redis, DynamoDB).
+Document Stores – Uses JSON-like documents to store data (e.g., MongoDB, CouchDB).
+Column-Family Stores – Stores data in columns instead of rows (e.g., Apache Cassandra, HBase).
+Graph Databases – Designed for handling relationships between data (e.g., Neo4j, ArangoDB).
+
+When dealing with big data and real-time applications.When scalability is a priority (e.g., social media platforms, IoT applications).\
+When working with unstructured or semi-structured data.When requiring fast reads and writes (e.g., caching, recommendation systems).
+
+//one type of nosql database type is document where for each document you store in feild value pairs and group of documents is Collection and group of these collections is database 
+
+//prerequisites :oop object oriented programming 
+
+mongodb compass is  a graphical user interface for managing our database 
+
+//now download mongodb shell (mongosh)
+you have to add the path to the system variables and also add it to the path 
+
+now after entering mongosh  in vscode
+show dbs shows three default databases you can also create a database just entering the name 
+use dbname shifts to the db youo mentioned in newly created  database you can createcollection 
+db.createCollection("collectionname")
+ex:school database you createted students collection use school next db.createCollection("students")
+now if you check show dbs you will get to add another one 
+for clear use cls
+for dropping the current database db.dropDatabase() method now the current database is removed permanently 
+
+in mongodb compass you can do the same you go to the localhost and there you can see createdatabse you can enter the database name and and the collection name then create then database is created 
+and now for deleting the database click on delete dustbin at teh databse and delete 
+
+//now for inserting the document into the db we are working 
+db.collectionsname.insertOne({key-value pairs}) //key value pairs seperated by commas
+db.students.insertOne({name:"pardhu",age:20})  if no such collection it will automatically createone 
+
+//for getting all documents from collection 
+db.students.find()
+
+//for inserting many documents at a time 
+db.students.insertMany([{key value pair},{key value pair},{key value pair},{key value pair }])
+
+//after insertign you do refresh there you can see the count of documetns in the compass even you add in the vscode 
+//you can also add data in the mongodb compass there after clicking on insert doument and if you add data then you have to click on the three lines format tehn you can insert 
+
+//you can also insert the documetn in this way 
+  db.students.insertOne({name:"paprika",
+                         age :32,
+                         gpa : 2.4,
+                         fulltime:true,
+                         registrationdate : new Date(),
+                         graduation :null,                 //if you dont know the value now you can store for later 
+                         courses :["Biology","physics"],   //it can also store multiple values 
+                         address: {street:"123 fake street" ,
+                                    city:"bikini bottom",
+                                    doorno: 4}
+                         })
+
+//for sorting the data based on the argument 
+db.students.find().sort({name:1})     //here by name it will sort 1 for alphabetical order and -1 for reverse alphabetical order 
+and also if by age or gpa give the argument in place of name and 1 means alphabetical order and -1 for reverse alphabetical order 
+
+//you can also limit the number of arguments you want to return 
+db.students.find().limit(1)  //this will give the 1object that is sorted by object id
+
+//you can also combine the sort and the limit methods 
+db.students.find().sort({gpa:1}.limit(1))
+
+//in the same way you can do these in compass also there in coolection you can see options 
+if you click there you would get the methods sort,collatio,hint those all there you can enter thee respective sorting criteria and click on find 
+
+//if you want to retrive a particular item then you can send query db.students.find({query},{projection})
+db.students.find({name:"paprika"})    //here wuery is something like based on what factor you want to find and the projection is what do you want to return (means what are the fields you want to return instead fo returnign all the information )
+db.students.find({},{name:true})  //this return all the documetns but only name fields and also returns the object id 
+db.students.find({},{_id:false,name:true})  //here you discrd teh id it returns only name 
+
+//the above query thing you can even do in compass there above in documetn syou can see clock beside inpput text bar 
+fo query you can use the the above metioned one and for projection in options there is project option above sort there you can enter the fields you want to return  the projection similar like in sql you ean tto return the sective columns 
+
+//to update documents in mongodb 
+db.students.updateOne(filter,update)    //filter is the selection criteria for the update  , and the update parameter the modifications we want to update 
+//for update we use $set and then inside key value pairs if the field is already there it will update if not then it will create one 
+ex:db.students.updateOne({name:"pardhu"},{$set:{fulltime:true}})
+//if you might confuse that there can be multiple with same name then use id to update 
+
+//we can even unset a field to remove teh field 
+ db.students.updateOne({name:"pardhu"},{$unset:{fulltime:true}}) //this will remove the field from pardhu document 
+
+//update many documents at a time 
+db.students.updateMany({},{$set:{fulltime:false}});     //this willl the create the filed if there is no feild 
+db.students.updateMany({fulltime:{$exists:false}}, {$set: {fulltime:true}})    //here if there doesnt exist field whose  fulltime is false then it will update to fulltime:true field
+
+//in compass directly you can add the fields there in documents if you click on the pencil icon there if you click agin then you will ge teh add field 
+
+//deleting the documents 
+//so first export the documents so you no need to create agin and again 
+//deleting in compass is simply clicking on delete icon but in shell 
+
+//for deleting one 
+db.students.deleteOne({name:"pardhu"})
+
+//for deleting more than one 
+db.students.deleteMany({age:23});  //deletes the document that matches this criteria 
+db.students.deleteMany({registrationdate:{$exists:false}})  //this deltes the documents that does nto contian registrationdate 
+
+//now you can import the json file again in the compass
+
+//operators
+ $-Comparison query operators 
+comparison operators return data based on value comparisons 
+db.students.find({name:"pardhu"}) //if you want to return everyone but not pardhu then 
+db.students.find({name:{$ne:"pardhu"}})   ne -not equal this returns all the documents whose name is nto pardhu 
+
+for lessthan 
+db.students.find({age:{$lt:21}}) //this returns the documents whose age is less than 21
+for lessthan equal to 
+db.students.find({age:{$lte:21}})
+for greater than 
+db.students.find({age:{$gt:21}})
+for greater than equal to
+db.students.find({age:{$gte:21}}) 
+
+for between whose cgpa is between 3 and 4 
+db.students.find({gpa:{$gte:3 ,#lte:4}}) this returns the documetns in that range for that use two operators 
+
+in operator 
+returns all the documetns that have the matching values 
+db.students.find({name:{$in:["pardhu","madhu"]}})   ///this returns the documents that contains the name in that array either pardhu or madhu 
+
+nin operator -not in
+returns all the documetns that  doesnt match values
+db.students.find({name:{$nin:["pardhu","madhu"]}})
+
+//you can do this in compass by send this the query in the input query box like {name:{$nin:["pardhu","madhu"]}}
+
+//logical operators 
+return the data based on the expressions that evaluate to true or false 
+
+and operator  -both condtions to be true
+check that accepts those conditions 
+//fulltime AND age<=23
+db.students.find({$and: [{fulltime:true},{age : {$lte: 23}}]})
+
+or operator   -any one condition to be true 
+//fulltime or age<=23
+db.students.find({$or: [{fulltime:true},{age : {$lte: 23}}]})
+
+nor operator  -both condtions to be false 
+//!fulltime and !age<=23   
+db.students.find({$nor: [{fulltime:true},{age : {$lte: 23}}]})
+
+not operator 
+returns that do not match  the query expression 
+
+indexes 
+indexes support  the efficient execution of wueries in mongodb.without indexes,mongodb must perfomr a cooletion scan scan every document in a collection to select those documetns that match the query statement.if an appropriate index exists for a query ,mongodb can use the index to limit the number of documents it must inspect 
+
+db.students.find({name:"pardhu"}).explain("executionStats")
+//this gives the executionStats of the query 
+//using linear search it takes so much of time if there are multiple data sets so we use indexes for each field 
+db.students.createIndex({name:1}) 
+after creating now if you use the same it will reduce some time 
+db.students.find({name:"pardhu"}).explain("executionStats")
+
+to get all the indexes 
+db.students.getIndexes()
+
+to drop the indexes 
+db.students.dropIndex("name_1")   // this drops the indexes 
+
+in compass you can create index .go to indexes and createIndex
+so we use indexes for quick lookup but it takes more memory and slows insert update and remove operations because you have to update the binary tree 
+best case to use indexes is when you are doing lot of searching  and less updating 
+
+
+//now collection is a group of documents and a database is a group of collections 
+for collections
+show collections 
+creating a collection with a maximum size 
+db.createCollection("teachers",{capped:true ,size:10000000 , max:100}, {autoIndexId:true} )   // if the capped is true then you have to mention the size in bytes  and also maximum number of documents (number of teachers )
+and another is auto index it is either true or false 
+
+for dropping collections
+db.teachers.drop()

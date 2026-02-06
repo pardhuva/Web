@@ -1,0 +1,128 @@
+//React Router DOM Basics
+
+Why we use it
+
+    React doesn’t have inbuilt routing — it’s just a UI library.
+    So to handle navigation between pages/components,
+     we use the react-router-dom library.
+
+ install it - npm install react-router-dom
+
+Types of Routers in React Router DOM 
+ 1. BrowserRouter :
+    Uses the HTML5 History API (pushState, popState).
+    Used for client-side routing (no page reloads).
+    Best for modern web apps hosted on servers configured to handle client routes.
+    Example URLs:
+        pardhuva.com/        →  /
+        pardhuva.com/courses →  /courses
+        pardhuva.com/about   →  /about
+    The server must redirect all routes to index.html.
+
+   ex: Browser-router.jsx
+
+ 2. HashRouter 
+   uses URL hash fragments(#) for routing 
+   server doesnt know about routes - it only sees the part before #
+   commonly used for static sites like those deployed on github pages.
+   ex: 
+    pardhuva.com/#/
+    pardhuva.com/#/courses 
+    pardhuva.com/#/about 
+ 
+   ex: Hashrouter.jsx 
+
+3. MemoryRouter 
+   
+   Does not use the browser’s history or URL.
+    Stores navigation in memory (not visible in the address bar).
+    Mostly used for:
+        Testing environments
+        Mobile apps
+        Non-browser environments
+
+| Router Type       | URL Style                | Uses History?    | Best For                    |
+| ----------------- | ------------------------ | ---------------- | --------------------------- |
+| **BrowserRouter** | `/about`                 | ✅ Yes            | Real web apps               |
+| **HashRouter**    | `/#/about`               | ❌ No (uses hash) | GitHub Pages / static sites |
+| **MemoryRouter**  | No URL shown (in memory) | ❌ No             | Testing / non-browser apps  |
+
+
+
+so actually browser history 
+ When you visit websites, your browser keeps track of all the pages you visit — that’s called the browser history.
+ it keeps those visited urls 
+ so back and forward are possible 
+
+That’s the browser’s built-in navigation system — it keeps track of your route history.
+
+but memoryrouter doesnt have this so it cant go forward and back it can only go to that specific route url 
+
+4. StaticRouter - that helps in generating static sites 
+   
+
+//you can ask like actually routing is handled traditionally by backend right but why here react is dealing with it 
+  first yes traditionally routing si handled by the backend 
+  in old style we app(like django,spring boot) 
+  every url like /,/about,/courses was a seperate HTTP request to the server.
+  the server decides which html page to send back 
+  ex: 
+    GET /              → send home.html
+    GET /about         → send about.html
+    GET /courses       → send courses.html
+
+//but in React, we use client side routing 
+ react is frontend library - but modern web apps are often single page applications (SPAs)
+  in a SPA :
+   . the browser loads only one HTML file (usually index.html)
+   . the react app runs inside it.
+   . when you navigate react does nto ask the server for a new page which leads to reloading of a new page 
+   . instead it changes components on the client side 
+   thats called client-side rouuting done entirely in the browser usign javascript 
+   
+   . React Router intercepts the click — stops it from making a network request.
+   . It updates the browser’s URL (e.g., /about) using the History API.
+   . It dynamically loads the <About /> component.
+   . The page doesn’t reload at all.
+
+   All of this happens on the frontend only.
+   That’s why React needs to handle routing itself — because the browser never goes back to the server for each page.
+
+//in backend 
+ 
+ Backend routing → for data (API endpoints)
+
+| Feature                    | Backend Routing       | Frontend Routing (React Router)  |
+| -------------------------- | --------------------- | -------------------------------- |
+| Who handles route changes? | Server                | Browser (React)                  |
+| Requires page reload?      | ✅ Yes                 | ❌ No                             |
+| URL changes visible?       | ✅ Yes                 | ✅ Yes                            |
+| Speed                      | Slower (reloads page) | Faster (only updates components) |
+| SEO-friendly               | ✅ Usually             | ⚠️ Needs extra setup (SSR)       |
+| Used in                    | Traditional apps      | Single Page Applications (SPA)   |
+
+
+/** Routing was originally a backend job,
+but in Single Page Applications (like React), routing moved to the frontend
+so we can switch between pages instantly without reloading the browser.
+
+ /client      → React app
+/server      → Node.js backend
+
+ Node.js handles backend API routes
+ 
+ these API endpoints in chapter15 
+
+so using this react-router-dom =>  SPA 
+  only url changes the page will not reload 
+
+in navbar if you check ther ein components if you use <a href='/'> this will reload for every component 
+ so we use Link which is provided by react-router-dom 
+
+//so total 
+ basic setup 
+ nested routes -> for suppose /product/shfd
+ dynamic routes 
+ usenavigate 
+ 404 page 
+

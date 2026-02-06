@@ -1,0 +1,18 @@
+//form handling 
+
+ so if you have input and submit now if you submit then there is default submit behavious 
+  it reloads for every submission this is its default behaviour 
+  so now we have to remove that reload for eveyr submission 
+
+  so elem argument you so use arrow function to call as there is parameter 
+  then use elem.preventDefault this prevents the default behaviour 
+
+//two way binding 
+ so actually we will not deal with our website directly we tell everything first to react it deals with the website you dont have direct control 
+ 
+ so whenever you want to write something  on the input instead of of directly writing onto the input box directly 
+ we let react handle it so that is when we use useState so some title,setTitle then here you change when onChnage is invoked  using  setTitle  -> this will change the titl evalue which interms change the value inside the input box 
+ in this way two-way binding is done without changing value directly we use setTtile which changes title which interms changes the value of the input 
+
+in this way whenever we deal with some form submitting or some submitting we use two-way binding 
+

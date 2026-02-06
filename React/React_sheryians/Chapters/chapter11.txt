@@ -1,0 +1,25 @@
+
+//api calling in react
+
+ connecting frontend and backend -> though api 
+  so for getting data from backend to frontend -> api 
+    and also response frontend to backend -> api 
+
+  so actually frontend requests from backend through api then 
+   backend requests the database api for data then the database which is the actual storage of data will send you the response which is data 
+   then the backend will send this response data to the frontend using api 
+
+ now to get the data from the backend using api calls can be done in two ways 
+  1. fetch 
+  2. axios 
+ here you used some fake api from jsonplaceholder 
+ there you use async await because you wait until the call is resolved 
+ there it returns promise can be in pending state you wait until the promise is resolved the api call is fetched 
+
+ you cannto directly print consoel.log(reponse.json()) this is pritn at that current moment state it will not wait 
+  so you have to use const data = await response.json()
+                     console.log(data)
+
+ const {data} = await axios('ht ') this is destructuring 
+ 
+     check API.jsx in React_practice

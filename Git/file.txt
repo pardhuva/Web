@@ -1,0 +1,397 @@
+//
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class Main {
+    
+    
+    public static class Node {
+        Node left;
+        Node right;
+        int val;
+        
+        Node(int val){
+            this.left = null;
+            this.right = null;
+            this.val = val;
+        }
+    }
+    public static Node createnode(int i , int[] arr){
+        
+        if(i >= arr.length){
+            return null;
+        }
+        
+        Node node = new Node(arr[i]);
+        node.left = createnode(2*i+1 ,arr);
+        node.right = createnode( 2*i+2 ,arr);
+        
+        return node;
+         
+    }
+    static boolean isstarted = false;
+    
+    public static boolean issubtree(Node root,Node subroot){
+        if(root == null && subroot == null) return true;
+        if(root == null || subroot ==null) return false;
+        
+        if(root.val == subroot.val){
+
+            if(issubtree(root.left,subroot.left) && issubtree(root.right,subroot.right)){
+                return true;
+            }
+        }
+        
+        return issubtree(root.left,subroot) || issubtree(root.right,subroot);
+        
+    }
+    public static void main(String[] args) {
+        int[] arr = {3,2,4,5,7,6,8,9};
+        
+        Node root = createnode(0,arr);
+        int[] arr1 = {4,6,8};
+        Node subroot = createnode(0,arr1);
+        
+        boolean value = issubtree(root,subroot);
+        System.out.println(value);
+    }
+}
+
+
+
+
+//// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class Main {
+    
+    
+    public static class Node {
+        Node left;
+        Node right;
+        int val;
+        
+        Node(int val){
+            this.left = null;
+            this.right = null;
+            this.val = val;
+        }
+    }
+    public static Node createnode(int i , int[] arr){
+        
+        if(i >= arr.length){
+            return null;
+        }
+        
+        Node node = new Node(arr[i]);
+        node.left = createnode(2*i+1 ,arr);
+        node.right = createnode( 2*i+2 ,arr);
+        
+        return node;
+         
+    }
+    public static int diameter = 0;
+    public static int height(Node root){
+        
+        if(root == null){
+            return 0;
+        }
+        
+        int left = height(root.left);
+        int right = height(root.right);
+        
+        diameter = Math.max(diameter , left+right) // if diameter is considered as number of edges 
+        //if diameter is considered as number of nodes then left+right+1 
+        
+        return Math.max(left,right) + 1;
+        
+    }
+    public static int diameter(Node root){
+        height(root);
+        return diameter;
+    }
+    
+    public static void main(String[] args) {
+        int[] arr = {3,2,4,5,7,6,8,9};
+        
+        Node root = createnode(0,arr);
+        int value = diamter(root);
+        System.out.println(value);
+    }
+}
+
+
+
+//// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class Main {
+    
+    
+    public static class Node {
+        Node left;
+        Node right;
+        int val;
+        
+        Node(int val){
+            this.left = null;
+            this.right = null;
+            this.val = val;
+        }
+    }
+    public static Node createnode(int i , int[] arr){
+        
+        if(i >= arr.length){
+            return null;
+        }
+        
+        Node node = new Node(arr[i]);
+        node.left = createnode(2*i+1 ,arr);
+        node.right = createnode( 2*i+2 ,arr);
+        
+        return node;
+         
+    }
+    public static int height(Node root){
+        
+        if(root == null){
+            return 0;
+        }
+        
+        int left = height(root.left);
+        int right = height(root.right);
+        
+        return Math.max(left,right) + 1;
+        
+    }
+    public static void main(String[] args) {
+        int[] arr = {3,2,4,5,7,6,8,9};
+        
+        Node root = createnode(0,arr);
+        int value = height(root);
+        System.out.println(value);
+    }
+}
+
+
+
+
+//// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class Main {
+    
+    
+    public static class Node {
+        Node left;
+        Node right;
+        int val;
+        
+        Node(int val){
+            this.left = null;
+            this.right = null;
+            this.val = val;
+        }
+    }
+    public static Node createnode(int i , int[] arr){
+        
+        if(i >= arr.length){
+            return null;
+        }
+        
+        Node node = new Node(arr[i]);
+        node.left = createnode(2*i+1 ,arr);
+        node.right = createnode( 2*i+2 ,arr);
+        
+        return node;
+         
+    }
+    public static int sumnodes(Node root){
+        
+        if(root == null){
+            return 0;
+        }
+        
+        int countleft = sumnodes(root.left);
+        int countright = sumnodes(root.right);
+        
+        return countleft + countright + root.val;
+        
+    }
+    public static void main(String[] args) {
+        int[] arr = {3,2,4,5,7,6,8,9};
+        
+        Node root = createnode(0,arr);
+        int value = sumnodes(root);
+        System.out.println(value);
+    }
+}
+
+
+
+//// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class Main {
+    
+    
+    public static class Node {
+        Node left;
+        Node right;
+        int val;
+        
+        Node(int val){
+            this.left = null;
+            this.right = null;
+            this.val = val;
+        }
+    }
+    public static Node createnode(int i , int[] arr){
+        
+        if(i >= arr.length){
+            return null;
+        }
+        
+        Node node = new Node(arr[i]);
+        node.left = createnode(2*i+1 ,arr);
+        node.right = createnode( 2*i+2 ,arr);
+        
+        return node;
+         
+    }
+    public static int countnodes(Node root){
+        
+        if(root == null){
+            return 0;
+        }
+        
+        int countleft = countnodes(root.left);
+        int countright = countnodes(root.right);
+        
+        return countleft + countright + 1;
+        
+    }
+    public static void main(String[] args) {
+        int[] arr = {3,2,4,5,7,6,8,9};
+        
+        Node root = createnode(0,arr);
+        int value = countnodes(root);
+        System.out.println(value);
+    }
+}
+
+
+
+//// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class Main {
+    
+    
+    public static class Node {
+        Node left;
+        Node right;
+        int val;
+        
+        Node(int val){
+            this.left = null;
+            this.right = null;
+            this.val = val;
+        }
+    }
+    public static Node createnode(int i , int[] arr){
+        
+        if(i >= arr.length){
+            return null;
+        }
+        
+        Node node = new Node(arr[i]);
+        node.left = createnode(2*i+1 ,arr);
+        node.right = createnode( 2*i+2 ,arr);
+        
+        return node;
+         
+    }
+    public static void levelorder(Node root){
+        Queue<Node> q = new LinkedList<>();
+        
+        if(root == null){
+            return;
+        }
+        q.add(root);
+        q.add(null);
+        while(!q.isEmpty()){
+            
+            Node node = q.remove();
+        
+            if(node == null){
+                q.add(null);
+                System.out.println();
+            }else{
+                System.out.print(node.val);
+                
+                if(node.left!= null){
+                    q.add(node.left);
+                }
+                if(node.right!=null){
+                    q.add(node.right);
+                }
+            }
+        }
+        
+    }
+    public static void main(String[] args) {
+        int[] arr = {3,2,4,5,7,6,8,9};
+        
+        Node root = createnode(0,arr);
+        levelorder(root);
+    }
+}
+
+
+
+//// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class Main {
+    
+    
+    public static class Node {
+        Node left;
+        Node right;
+        int val;
+        
+        Node(int val){
+            this.left = null;
+            this.right = null;
+            this.val = val;
+        }
+    }
+    public static Node createnode(int i , int[] arr){
+        
+        if(i >= arr.length){
+            return null;
+        }
+        
+        Node node = new Node(arr[i]);
+        node.left = createnode(2*i+1 ,arr);
+        node.right = createnode( 2*i+2 ,arr);
+        
+        return node;
+         
+    }
+    public static void inorder(Node root){
+        
+        if(root != null){
+           inorder(root.left);
+           System.out.println(root.val + " ");
+           inorder(root.right);
+        }
+    }
+    public static void main(String[] args) {
+        int[] arr = {3,2,4,5,7,6,8,9};
+        
+        Node root = createnode(0,arr);
+        inorder(root);
+    }
+}

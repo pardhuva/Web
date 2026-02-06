@@ -1,0 +1,3 @@
+ i am learning
+ python 
+C:\Users\pardh\python\text.txt

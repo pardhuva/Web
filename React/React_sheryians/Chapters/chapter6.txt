@@ -1,0 +1,41 @@
+
+//Hooks 
+
+we read  functional coomponents which are useful in building ui 
+but for  state change or feature implement or code impleemnt or manage context in these cases functional component donot work welll 
+that is when hooks used 
+
+hooks are magical functions that are used to do different tasks 
+ useState 
+ useEffect 
+ useReducer
+ useRef
+ useContext
+ useCallback
+ useMemo
+
+1. useState -> manage(change) states 
+   suppose messages before viewing some new message it is in one state after viewing hte new message it is in another state 
+   so actually you want to change something in your website cna be any variable or anything but actually you should not chaneg directly 
+   you have to make reactjs change it that is useState does changes the state 
+
+2. useEffect -> manage side stack
+  ex: a truck is going on which si react main function then on side many other bicycles go like other any functions or api calls
+
+3. useRef -> to select dom element 
+   actually normally in reactjs you actually dont render using document.get() you try to change it directly using usestate 
+   gets the reference 
+
+4. useContext -> manage the global context 
+    suppose you have some website  if the sections in the applciation deal with the same data then you make hte data globally available 
+
+5. useReducer -> manages complex logics 
+    like checking user loggedin or not for next access 
+    or manage local storage data
+
+useState (basic state)->(advance version) -> useContext (global state)-> (advance version)-> useReducer(complex global state)
+
+6. useCallback and useMemo -> for optimisation 
+   suppose if somethings re-rendered repeatedly then avoids unnecessary re-renders 
+    
+
